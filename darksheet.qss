@@ -1,0 +1,92 @@
+QMainWindow#mainwindow {
+    background-color: rgba(33, 33, 33);
+    color: rgb(233, 233, 233);
+    font: "Josefin Sans" 20pt;
+}
+
+
+QPushButton:hover#topbutton {
+    font-weight: 700;
+    color: rgb(255, 100, 125);
+}
+QPushButton:pressed#topbutton {
+    border-style: none;
+    background-color: rgba(127, 33, 128, 100);
+    border-radius: 20;
+}
+QPushButton:checked#topbutton {
+    border-style: none;
+    background-color: rgba(127, 33, 128, 100);
+    border-radius: 20;
+}
+QPushButton#topbutton {
+    color: rgb(233, 233, 233);
+    border-style: none;
+    background-color: transparent;
+    border-radius: 20;
+}
+
+
+QFrame#topframe {
+    border-radius: 30;
+    background-color: transparent;
+    border-style: solid;
+    border-width: 3;
+    border-color: rgb(255, 100, 125);
+}
+
+
+QPushButton:hover#duskybutton {
+	background-color: rgb(233, 233, 233);
+}
+QPushButton:pressed#duskybutton {
+    background-color: rgb(200, 200, 200);
+}
+QPushButton#duskybutton {
+	background-color: rgb(255, 100, 125);
+	color: rgb(33, 33, 33);
+	border-radius: 25;
+	border-style: none;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+QLabel#newlabel {
+    background-color: transparent;
+    color: rgb(233, 233, 233);
+    font-size: 75pt;
+}
+
+
+QFrame#transparentwidget {
+    background-color: transparent;
+}
+
+QFrame#addnewframe {
+    background-color: rgba(255, 100, 125, 200);
+    border-radius: 50;
+}
+
+QLabel#addnewframelabel {
+    background-color: transparent;
+    color: rgb(233, 233, 233);
+    font-size: 40pt;
+    font-weight: 700;
+}
+
+QLineEdit#addfieldline {
+    border-radius: 15;
+    background-color: rgba(100, 100, 100, 100);
+    padding-left: 10;
+    padding-right: 10;
+    color: rgb(233, 233, 233);
+}
+
+QLabel#transparentlabel {
+    background-color: transparent;
+    color: rgb(233, 233, 233);
+    padding-left: 10;
+    padding-right: 10;
+}

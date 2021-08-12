@@ -1,19 +1,48 @@
-CREATE TABLE purchase (
-    batch VARCHAR(50) PRIMARY KEY,
-    title VARCHAR(100),
-    amount INT(12),
-    price DECIMAL(8, 2),
-    purchasedate DATE,
-    mfgdate DATE,
-    expdate DATE,
-    dealer VARCHAR(100)
+create database medmanage;
+use medmanage;
+
+
+create table stock (
+    batch varchar(50),
+    medname varchar(100),
+    quantity int(12),
+    pricerate decimal(8, 2),
+    dealer varchar(100),
+    buydate date,
+    mfgdate date,
+    expdate date
 );
 
-CREATE TABLE sell (
-    batch VARCHAR(50) PRIMARY KEY,
-    title VARCHAR(100),
-    amount INT(12),
-    price DECIMAL(8, 2),
-    selldate DATE,
-    customer VARCHAR(100)
+
+create table sold (
+    batch varchar(50),
+    medname varchar(100),
+    quantity int(12),
+    pricerate decimal(8, 2),
+    dealer varchar(100),
+    buydate date,
+    mfgdate date,
+    expdate date
+);
+
+
+create table dumpbin (
+    batch varchar(50),
+    medname varchar(100),
+    quantity int(12),
+    pricerate decimal(8, 2),
+    dealer varchar(100),
+    buydate date,
+    mfgdate date,
+    expdate date
+);
+
+
+create table sell (
+    batch varchar(50) primary key,
+    medname varchar(100),
+    quantity int(12),
+    pricerate decimal(8, 2),
+    customer varchar(100),
+    selldate date
 );

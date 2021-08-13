@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QMainWindow as qwin
 from PyQt5.QtWidgets import QPushButton as qbut
 from PyQt5.QtWidgets import QShortcut as qsho
 from PyQt5.QtWidgets import QLineEdit as qlin
+from PyQt5.QtWidgets import QWidget as qwig
 from PyQt5.QtWidgets import QFrame as qfra
 from PyQt5.QtWidgets import QLabel as qlab
 from PyQt5.QtGui import QKeySequence as qkey
@@ -89,11 +90,8 @@ class interface:
         self.purchaseframe = purchaseframe(self.window)
         self.sellframe = sellframe(self.window)
         self.notificationframe = notificationframe(self.window)
-        self.allwidgets = [
-            self.newframe,
-            self.purchaseframe,
-            self.sellframe
-        ]
+        self.searchoptframe = searchoptframe(self.window)
+        self.allwidgets = [ self.newframe, self.purchaseframe, self.sellframe, self.searchoptframe ]
         
     def configurewindow(self):
         '''configures mainwindow'''
@@ -123,7 +121,7 @@ class interface:
     def setupsearch(self):
         '''sets up Search tab'''
         refreshtopframe("Search")
-        refreshwindow()
+        refreshwindow(self.searchoptframe)
         log("Search tab set up")
 
     def setupstats(self):
@@ -185,22 +183,21 @@ class topframe(qfra):
 
 class newbutton(qbut):
 
-    def __init__(self, position: int, parent: qfra):
+    def __init__(self, text: str, position: tuple, parent: qfra):
         '''creates newbutton'''
         super().__init__(parent)
         self.position = position
+        self.text = text
         self.configure()
         log("newbutton created")
 
     def configure(self):
         '''configures newbutton'''
-        x = 100 + 400 * self.position
+        x = 100 + 400 * self.position[0]
+        y = 190 + 110 * self.position[1]
         self.setObjectName("duskybutton")
-        if self.position == 0:
-            self.setText("purchase")
-        else:
-            self.setText("sell")
-        self.setGeometry(x, 300, 200, 75)
+        self.setText(self.text)
+        self.setGeometry(x, y, 200, 75)
         self.setStyleSheet("border-radius: 37; font-size: 25pt;")
         log("newbutton configured")
 
@@ -210,8 +207,8 @@ class newframe(qfra):
         '''creates new option'''
         super().__init__(window)
         self.label = qlab(self)
-        self.purchasebutton = newbutton(0, self)
-        self.sellbutton = newbutton(1, self)
+        self.purchasebutton = newbutton("Purchase", (0, 1), self)
+        self.sellbutton = newbutton("Sell", (1, 1), self)
         self.configure()
         log("newframe created")
 
@@ -295,16 +292,23 @@ class addnewbutton(qbut):
         self.setText(self.name)
         log("addnewbutton configured")
 
-class iconstr:
+class searchoptframe(newframe):
 
-    def __init__(self, string: str):
-        self.string = string
-        self.iconize()
+    def __init__(self, window: qwin):
+        '''creates searchoptframe'''
+        super().__init__(window)
+        self.batchbutton = newbutton("Batch Number", (0, 0), self)
+        self.namebutton = newbutton("Medicine Name", (0, 1), self)
+        self.dealerbutton = newbutton("Manufacturer", (1, 0), self)
+        self.customerbutton = newbutton("Customer", (1, 1), self)
+        self.configuresearchoptframe()
+        log("searchframe created")
 
-    def iconize(self):
-        '''replaces black with white if lightmode'''
-        if conf.qsheet.startswith("light"):
-            self.string.replace("black", "white")
+    def configuresearchoptframe(self):
+        '''configures searchoptframe'''
+        self.purchasebutton.destroy(True)
+        self.sellbutton.destroy(True)
+        log("searchoptframe configured")
 
 class notificationframe(qfra):
 
@@ -323,7 +327,7 @@ class notificationframe(qfra):
         self.setGeometry(0, 755, 1200, 40)
         # label
         label = self.label
-        label.setGeometry(0, 10, 1160, 30)
+        label.setGeometry(0, 10, 1155, 30)
         label.setObjectName("transparentlabel")
         # button
         button = self.button
@@ -388,7 +392,6 @@ class purchaseframe(addnewframe):
         self.mfgdate = addfield("Manufacture Date (YYYY-MM-DD)", 6, self)
         self.expdate = addfield("Expiry Date (YYYY-MM-DD)", 7, self)
         self.configurepurchasebutton()
-        self.addshortcuts()
         log("purchaseframe created")
 
     def configurepurchasebutton(self):
@@ -405,12 +408,6 @@ class purchaseframe(addnewframe):
         button.clicked.connect(self.addfunction)
         # log
         log("purchaseframe configured")
-
-    def addshortcuts(self):
-        '''adds keyboard shortcuts'''
-        batchtoname = qsho(qkey("Enter"), self.batch)
-        batchtoname.activated.connect(lambda: self.name.setCursor())
-        log("shortcuts added")
 
     def closefunction(self):
         '''function of close button'''
@@ -599,6 +596,20 @@ def addsell(info: list):
         log("could not sell expired medicine")
         notify(f"'{info[0]}' not in stock")
 
+def dumpexpired():
+    '''moves expired medicines to dumpbin'''
+    today = date.today().isoformat()
+    # copying from stock to dumped
+    command = f'''insert into dumpbin select * from stock where expdate < "{today}"'''
+    cursor.execute(command)
+    client.commit()
+    # deleting from stock
+    command = f'''delete from stock where expdate < "{today}"'''
+    cursor.execute(command)
+    client.commit()
+    # log
+    log("expired medicines have been dumped")
+
 ### main execution
 
 if __name__ == "__main__":
@@ -630,6 +641,9 @@ if __name__ == "__main__":
         with open(conf.qsheet, "r") as sheet:
             app.setStyleSheet(sheet.read())
         log(f"{conf.qsheet} applied")
+
+        ## dumping expired medicines
+        dumpexpired()
 
         ## closing application
         closefunction(app.exec_())

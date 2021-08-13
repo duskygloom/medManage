@@ -1,0 +1,186 @@
+>>> Fri Aug 13 10:48:34 2021
+log: appplication created
+>>> Fri Aug 13 10:48:34 2021
+log: mainwindow configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: topbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: topframe configured
+>>> Fri Aug 13 10:48:34 2021
+log: topframe created
+>>> Fri Aug 13 10:48:34 2021
+log: topbuttons configured
+>>> Fri Aug 13 10:48:34 2021
+log: newbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: newbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: newbutton configured
+>>> Fri Aug 13 10:48:34 2021
+log: newbutton created
+>>> Fri Aug 13 10:48:34 2021
+log: newframe configured
+>>> Fri Aug 13 10:48:34 2021
+log: newframe created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewframe configured
+>>> Fri Aug 13 10:48:35 2021
+log: adnewframe created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: purchaseframe configured
+>>> Fri Aug 13 10:48:35 2021
+log: purchaseframe created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton configured
+>>> Fri Aug 13 10:48:35 2021
+log: addnewbutton created
+>>> Fri Aug 13 10:48:35 2021
+log: addnewframe configured
+>>> Fri Aug 13 10:48:35 2021
+log: adnewframe created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: addfield configured
+>>> Fri Aug 13 10:48:35 2021
+log: addfield created
+>>> Fri Aug 13 10:48:35 2021
+log: sellframe configured
+>>> Fri Aug 13 10:48:35 2021
+log: sellframe created
+>>> Fri Aug 13 10:48:35 2021
+log: configured notificationframe
+>>> Fri Aug 13 10:48:35 2021
+log: notificationframe created
+>>> Fri Aug 13 10:48:35 2021
+log: topframe refreshed
+>>> Fri Aug 13 10:48:35 2021
+log: window refreshed
+>>> Fri Aug 13 10:48:35 2021
+log: New tab setup
+>>> Fri Aug 13 10:48:35 2021
+log: interface created
+>>> Fri Aug 13 10:48:35 2021
+log: close shortcut created
+>>> Fri Aug 13 10:48:35 2021
+log: darksheet.qss applied
+>>> Fri Aug 13 10:48:35 2021
+log: expired medicines have been dumped
+>>> Fri Aug 13 10:49:02 2021
+log: addpurchase frame opened
+>>> Fri Aug 13 10:49:49 2021
+log: topframe refreshed
+>>> Fri Aug 13 10:49:49 2021
+log: window refreshed
+>>> Fri Aug 13 10:49:49 2021
+log: Stats tab set up
+>>> Fri Aug 13 10:50:06 2021
+log: topframe refreshed
+>>> Fri Aug 13 10:50:06 2021
+log: window refreshed
+>>> Fri Aug 13 10:50:06 2021
+log: Chart tab set up
+>>> Fri Aug 13 10:50:10 2021
+log: topframe refreshed
+>>> Fri Aug 13 10:50:10 2021
+log: window refreshed
+>>> Fri Aug 13 10:50:10 2021
+log: Note tab set up
+>>> Fri Aug 13 10:50:13 2021
+log: topframe refreshed
+>>> Fri Aug 13 10:50:13 2021
+log: window refreshed
+>>> Fri Aug 13 10:50:13 2021
+log: New tab setup
+>>> Fri Aug 13 10:50:15 2021
+log: addpurchase frame opened
+>>> Fri Aug 13 10:50:52 2021
+log: closing application

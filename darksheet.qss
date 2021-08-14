@@ -1,9 +1,8 @@
 QMainWindow#mainwindow {
-    background-color: rgba(33, 33, 33);
+    background-color: rgb(33, 33, 33);
     color: rgb(233, 233, 233);
     font: "Josefin Sans" 20pt;
 }
-
 
 QPushButton:hover#topbutton {
     font-weight: 700;
@@ -27,7 +26,7 @@ QPushButton#topbutton {
 }
 
 
-QFrame#topframe {
+QWidget#topwidget {
     border-radius: 30;
     background-color: transparent;
     border-style: solid;
@@ -60,16 +59,11 @@ QLabel#newlabel {
 }
 
 
-QFrame#transparentwidget {
+QWidget#transparentwidget {
     background-color: transparent;
 }
 
-QFrame#addnewframe {
-    background-color: rgba(255, 100, 125, 200);
-    border-radius: 50;
-}
-
-QLabel#addnewframelabel {
+QLabel#addnewidgetlabel {
     background-color: transparent;
     color: rgb(233, 233, 233);
     font-size: 40pt;

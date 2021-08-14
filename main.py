@@ -10,8 +10,8 @@ from PyQt5.QtWidgets import QLineEdit as qlin
 from PyQt5.QtWidgets import QWidget as qwig
 from PyQt5.QtWidgets import QFrame as qfra
 from PyQt5.QtWidgets import QLabel as qlab
-from PyQt5.QtGui import QKeySequence as qkey
 from PyQt5.QtGui import QIcon as qico
+from PyQt5.QtGui import QKeySequence as qkey
 from PyQt5.QtCore import Qt as qt
 from PyQt5.QtCore import QSize as qsiz
 import mysql.connector as sql
@@ -36,17 +36,18 @@ def log(message: str, category: str = "log"):
 def closefunction(status: int = 0):
     '''closes application'''
     log("closing application")
-    logfile.close()
+    if conf.concise:
+        logfile.close()
     app.exit(status)
 
-def refreshtopframe(tabname: str):
+def refreshtopwidget(tabname: str):
     '''clicks and unclicks topbuttons'''
     for i in ui.alltopbuttons:
         if i.text == tabname:
             i.setChecked(True)
         else:
             i.setChecked(False)
-    log("topframe refreshed")
+    log("topwidget refreshed")
 
 def refreshwindow(*required):
     '''shows and hides widgets'''
@@ -58,8 +59,8 @@ def refreshwindow(*required):
     log("window refreshed")
 
 def notify(message: str):
-    '''notifies user in notificationframe'''
-    label = ui.notificationframe.label
+    '''notifies user in notificationwidget'''
+    label = ui.notificationwidget.label
     label.setText(message)
     log(f"notified user '{message}'")
 
@@ -71,31 +72,38 @@ def iconize(filename: str) -> qico:
 
 ### classes
 
-class interface:
+class interface(qwig):
 
     def __init__(self):
         '''creates interface class'''
-        self.window = mainwindow
+        super().__init__(mainwindow)
         self.configurewindow()
-        self.topframe = topframe(self.window)
+        self.configure()
+        self.topwidget = topwidget(self)
         self.configuretopbuttons()
         self.alltopbuttons = [
-            self.topframe.new,
-            self.topframe.search,
-            self.topframe.stats,
-            self.topframe.chart,
-            self.topframe.note
+            self.topwidget.new,
+            self.topwidget.search,
+            self.topwidget.stats,
+            self.topwidget.chart,
+            self.topwidget.note
         ]
-        self.newframe = newframe(self.window)
-        self.purchaseframe = purchaseframe(self.window)
-        self.sellframe = sellframe(self.window)
-        self.notificationframe = notificationframe(self.window)
-        self.searchoptframe = searchoptframe(self.window)
-        self.allwidgets = [ self.newframe, self.purchaseframe, self.sellframe, self.searchoptframe ]
-        
+        self.newidget = newidget(self)
+        self.purchasewidget = purchasewidget(self)
+        self.sellwidget = sellwidget(self)
+        self.notificationwidget = notificationwidget(self)
+        self.searchoptwidget = searchoptwidget(self)
+        self.allwidgets = [ self.newidget, self.purchasewidget, self.sellwidget, self.searchoptwidget ]
+
+    def configure(self):
+        '''configures main widget'''
+        self.setGeometry(0, 0, 1200, 800)
+        self.setObjectName("stagewidget")
+        log("configured topwidget")
+
     def configurewindow(self):
         '''configures mainwindow'''
-        window = self.window
+        window = mainwindow
         window.setObjectName("mainwindow")
         window.setWindowTitle("medManage")
         window.setWindowIcon(qico("resources/icon.svg"))
@@ -104,7 +112,7 @@ class interface:
 
     def configuretopbuttons(self):
         '''configures topbuttons'''
-        frame = self.topframe
+        frame = self.topwidget
         frame.new.clicked.connect(self.setupnew)
         frame.search.clicked.connect(self.setupsearch)
         frame.stats.clicked.connect(self.setupstats)
@@ -114,31 +122,31 @@ class interface:
 
     def setupnew(self):
         '''sets up New tab'''
-        refreshtopframe("New")
-        refreshwindow(self.newframe)
+        refreshtopwidget("New")
+        refreshwindow(self.newidget)
         log("New tab setup")
 
     def setupsearch(self):
         '''sets up Search tab'''
-        refreshtopframe("Search")
-        refreshwindow(self.searchoptframe)
+        refreshtopwidget("Search")
+        refreshwindow(self.searchoptwidget)
         log("Search tab set up")
 
     def setupstats(self):
         '''sets up Stats tab'''
-        refreshtopframe("Stats")
+        refreshtopwidget("Stats")
         refreshwindow()
         log("Stats tab set up")
 
     def setupchart(self):
         '''sets up Charts tab'''
-        refreshtopframe("Chart")
+        refreshtopwidget("Chart")
         refreshwindow()
         log("Chart tab set up")
 
     def setupnote(self):
         '''sets up Note tab'''
-        refreshtopframe("Note")
+        refreshtopwidget("Note")
         refreshwindow()
         log("Note tab set up")
 
@@ -146,7 +154,7 @@ class interface:
 
 class topbutton(qbut):
 
-    def __init__(self, text: str, position: int, parent: qfra):
+    def __init__(self, text: str, position: int, parent: qwig):
         super().__init__(parent)
         self.text = text
         self.position = position
@@ -163,27 +171,28 @@ class topbutton(qbut):
         self.setCheckable(True)
         log("topbutton configured")
 
-class topframe(qfra):
+class topwidget(qwig):
 
-    def __init__(self, window: qwin):
-        super().__init__(window)
+    def __init__(self, stage: qwig):
+        '''creates topwidget'''
+        super().__init__(stage)
         self.new = topbutton("New", 0, self)
         self.search = topbutton("Search", 1, self)
         self.stats = topbutton("Stats", 2, self)
         self.chart = topbutton("Chart", 3, self)
         self.note = topbutton("Note", 5, self)
         self.configure()
-        log("topframe created")
+        log("topwidget created")
 
     def configure(self):
-        '''configures topframe'''
-        self.setObjectName("topframe")
+        '''configures topwidget'''
+        self.setObjectName("topwidget")
         self.setGeometry(17, 10, 1170, 60)
-        log("topframe configured")
+        log("topwidget configured")
 
 class newbutton(qbut):
 
-    def __init__(self, text: str, position: tuple, parent: qfra):
+    def __init__(self, text: str, position: tuple, parent: qwig):
         '''creates newbutton'''
         super().__init__(parent)
         self.position = position
@@ -201,22 +210,22 @@ class newbutton(qbut):
         self.setStyleSheet("border-radius: 37; font-size: 25pt;")
         log("newbutton configured")
 
-class newframe(qfra):
+class newidget(qwig):
 
-    def __init__(self, window: qwin):
-        '''creates new option'''
-        super().__init__(window)
+    def __init__(self, stage: qwig):
+        '''creates newidget'''
+        super().__init__(stage)
         self.label = qlab(self)
         self.purchasebutton = newbutton("Purchase", (0, 1), self)
         self.sellbutton = newbutton("Sell", (1, 1), self)
         self.configure()
-        log("newframe created")
+        log("newidget created")
 
     def configure(self):
-        '''configures newframe'''
-        # frame
+        '''configures newidget'''
+        # widget
         self.setGeometry(200, 200, 800, 425)
-        self.setObjectName("transparentframe")
+        self.setObjectName("transparentwidget")
         # label
         label = self.label
         label.setObjectName("newlabel")
@@ -229,25 +238,25 @@ class newframe(qfra):
         button = self.sellbutton
         button.clicked.connect(self.sellbuttonfunction)
         # log
-        log("newframe configured")
+        log("newidget configured")
 
     def purchasebuttonfunction(self):
         '''function of purchase button'''
-        ui.purchaseframe.setVisible(True)
+        ui.purchasewidget.setVisible(True)
         self.setVisible(False)
-        log("addpurchase frame opened")
+        log("addpurchasewidget opened")
 
     def sellbuttonfunction(self):
         '''function of sell button'''
-        ui.sellframe.setVisible(True)
+        ui.sellwidget.setVisible(True)
         self.setVisible(False)
-        log("addsell frame opened")
+        log("addsellwidget opened")
 
-class addfield(qfra):
+class addfield(qwig):
 
-    def __init__(self, name: str, position: int, parent: qfra):
+    def __init__(self, name: str, position: int, stage: qwig):
         '''creates addfield'''
-        super().__init__(parent)
+        super().__init__(stage)
         self.name = name
         self.position = position
         self.linedit = qlin(self)
@@ -257,8 +266,8 @@ class addfield(qfra):
 
     def configure(self):
         '''''configures addfield'''
-        # frame
-        self.setObjectName("transparentframe")
+        # widget
+        self.setObjectName("transparentwidget")
         y = 90 + 50 * self.position
         self.setGeometry(20, y, 1050, 50)
         # linedit
@@ -275,7 +284,7 @@ class addfield(qfra):
 
 class addnewbutton(qbut):
 
-    def __init__(self, name: str, position: int, parent: qfra):
+    def __init__(self, name: str, position: int, parent: qwig):
         '''creates addnewbutton'''
         super().__init__(parent)
         self.name = name
@@ -292,38 +301,53 @@ class addnewbutton(qbut):
         self.setText(self.name)
         log("addnewbutton configured")
 
-class searchoptframe(newframe):
+class searchoptbutton(newbutton):
 
-    def __init__(self, window: qwin):
-        '''creates searchoptframe'''
-        super().__init__(window)
-        self.batchbutton = newbutton("Batch Number", (0, 0), self)
-        self.namebutton = newbutton("Medicine Name", (0, 1), self)
-        self.dealerbutton = newbutton("Manufacturer", (1, 0), self)
-        self.customerbutton = newbutton("Customer", (1, 1), self)
-        self.configuresearchoptframe()
-        log("searchframe created")
+    def __init__(self, text: str, position: tuple, parent: qwig):
+        '''creates searchoptbutton'''
+        super().__init__(text, position, parent)
+        self.configuresearchoptbutton()
+        log("searchoptbutton created")
 
-    def configuresearchoptframe(self):
-        '''configures searchoptframe'''
-        self.purchasebutton.destroy(True)
-        self.sellbutton.destroy(True)
-        log("searchoptframe configured")
+    def configuresearchoptbutton(self):
+        '''configures searchoptbutton'''
+        self.setStyleSheet("border-radius: 35; font-size: 20pt;")
+        log("searchoptbutton configured")
 
-class notificationframe(qfra):
+class searchoptwidget(newidget):
 
-    def __init__(self, window: qwin):
-        '''creates notificationframe'''
-        super().__init__(window)
+    def __init__(self, stage: qwig):
+        '''creates searchoptwidget'''
+        super().__init__(stage)
+        self.batchbutton = searchoptbutton("Batch Number", (0, 0), self)
+        self.namebutton = searchoptbutton("Med Name", (0, 1), self)
+        self.dealerbutton = searchoptbutton("Manufacturer", (1, 0), self)
+        self.customerbutton = searchoptbutton("Customer", (1, 1), self)
+        self.configuresearchoptwidget()
+        log("searchoptwidget created")
+
+    def configuresearchoptwidget(self):
+        '''configures searchoptwidget'''
+        self.purchasebutton.setParent(None)
+        self.sellbutton.setParent(None)
+        self.label.setText("Search")
+        self.label.setGeometry(100, 0, 600, 100)
+        log("searchoptwidget configured")
+
+class notificationwidget(qwig):
+
+    def __init__(self, stage: qwig):
+        '''creates notificationwidget'''
+        super().__init__(stage)
         self.label = qlab(self)
         self.button = qbut(self)
         self.configure()
-        log("notificationframe created")
+        log("notificationwidget created")
 
     def configure(self):
         '''configures notificationlabel'''
-        # frame
-        self.setObjectName("transparentframe")
+        # widget
+        self.setObjectName("transparentwidget")
         self.setGeometry(0, 755, 1200, 40)
         # label
         label = self.label
@@ -339,18 +363,18 @@ class notificationframe(qfra):
         button.setIconSize(qsiz(30, 30))
         button.clicked.connect(self.clearnotification)
         # log
-        log("configured notificationframe")
+        log("configured notificationwidget")
 
     def clearnotification(self):
         '''clears notificationlabel'''
         self.label.setText("")
         log("notification cleared")
 
-class addnewframe(qfra):
+class addnewidget(qwig):
 
-    def __init__(self, window: qwin):
-        '''creates addnewframe'''
-        super().__init__(window)
+    def __init__(self, stage: qwig):
+        '''creates addnewidget'''
+        super().__init__(stage)
         self.label = qlab(self)
         self.batch = addfield("Batch Number", 0, self)
         self.name = addfield("Medicine Name", 1, self)
@@ -360,42 +384,42 @@ class addnewframe(qfra):
         self.clearbutton = addnewbutton("Clear", 1, self)
         self.closebutton = addnewbutton("Close", 6, self)        
         self.configure()
-        log("adnewframe created")
+        log("adnewidget created")
 
     def configure(self):
-        '''configures addnewframe'''
-        # frame
-        self.setObjectName("transparentframe")
+        '''configures addnewidget'''
+        # widget
+        self.setObjectName("transparentwidget")
         self.setGeometry(50, 130, 1100, 590)
         # label
         label = self.label
         label.setGeometry(200, 15, 700, 55)
-        label.setObjectName("addnewframelabel")
+        label.setObjectName("addnewidgetlabel")
         label.setAlignment(centeralign)
-
         # log
-        log("addnewframe configured")
+        log("addnewidget configured")
 
     def closefunction(self):
         '''function of close button'''
-        ui.newframe.setVisible(True)
+        ui.newidget.setVisible(True)
         self.setVisible(False)
-        log("addnewframe closed")
+        log("addnewidget closed")
 
-class purchaseframe(addnewframe):
+class purchasewidget(addnewidget):
 
-    def __init__(self, window: qwin):
-        '''creates purchaseframe'''
-        super().__init__(window)
-        self.dealer = addfield("Dealer", 4, self)
+    def __init__(self, stage: qwig):
+        '''creates purchasewidget'''
+        super().__init__(stage)
+        self.dealer = addfield("Manufacturer", 4, self)
         self.buydate = addfield("Purchase Date (YYYY-MM-DD)", 5, self)
         self.mfgdate = addfield("Manufacture Date (YYYY-MM-DD)", 6, self)
         self.expdate = addfield("Expiry Date (YYYY-MM-DD)", 7, self)
         self.configurepurchasebutton()
-        log("purchaseframe created")
+        log("purchasewidget created")
 
     def configurepurchasebutton(self):
-        '''configures purchaseframe'''
+        '''configures purchasewidget'''
+        self.batch.setFocus()
         # label
         label = self.label
         label.setText("New Purchase")
@@ -407,13 +431,7 @@ class purchaseframe(addnewframe):
         button = self.addbutton
         button.clicked.connect(self.addfunction)
         # log
-        log("purchaseframe configured")
-
-    def closefunction(self):
-        '''function of close button'''
-        ui.newframe.setVisible(True)
-        self.setVisible(False)
-        log("addnewframe closed")
+        log("purchasewidget configured")
 
     def clearfunction(self):
         '''function of clear button'''
@@ -424,29 +442,49 @@ class purchaseframe(addnewframe):
 
     def addfunction(self):
         '''function of add button'''
-        batch = ui.purchaseframe.batch.linedit.text()
-        name = ui.purchaseframe.name.linedit.text()
-        quantity = ui.purchaseframe.quantity.linedit.text()
-        price = ui.purchaseframe.price.linedit.text()
-        dealer = ui.purchaseframe.dealer.linedit.text()
-        buydate = ui.purchaseframe.buydate.linedit.text()
-        mfgdate = ui.purchaseframe.mfgdate.linedit.text()
-        expdate = ui.purchaseframe.expdate.linedit.text()
+        batch = ui.purchasewidget.batch.linedit.text()
+        name = ui.purchasewidget.name.linedit.text()
+        quantity = ui.purchasewidget.quantity.linedit.text()
+        price = ui.purchasewidget.price.linedit.text()
+        dealer = ui.purchasewidget.dealer.linedit.text()
+        buydate = ui.purchasewidget.buydate.linedit.text()
+        mfgdate = ui.purchasewidget.mfgdate.linedit.text()
+        expdate = ui.purchasewidget.expdate.linedit.text()
         info = [ batch, name, quantity, price, dealer, buydate, mfgdate, expdate ]
         addpurchase(info)
 
-class sellframe(addnewframe):
+    def keyPressEvent(self, event):
+        '''sets up keyboard functions'''
+        lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.price.linedit, self.dealer.linedit, self.buydate.linedit, self.mfgdate.linedit, self.expdate.linedit ]
+        if event.key() == qt.Key_Up:
+            focusedline = self.focusWidget()
+            tofocus = lines[lines.index(focusedline) - 1]
+            tofocus.setFocus()
+        elif event.key() == qt.Key_Down:
+            focusedline = self.focusWidget()
+            index = lines.index(focusedline) + 1
+            if index >= len(lines):
+                index = 0
+            tofocus = lines[index]
+            tofocus.setFocus()
+        elif event.key() == qt.Key_Return:
+            self.addbutton.animateClick()
+        elif event.key() == qt.Key_Escape:
+            self.closebutton.animateClick()
 
-    def __init__(self, window: qwin):
-        '''creates sellframe'''
-        super().__init__(window)
+class sellwidget(addnewidget):
+
+    def __init__(self, stage: qwig):
+        '''creates sellwidget'''
+        super().__init__(stage)
         self.customer = addfield("Customer", 4, self)
         self.selldate = addfield("Sell Date (YYYY-MM-DD)", 5, self)
-        self.configuresellframe()
-        log("sellframe created")
+        self.configuresellwidget()
+        log("sellwidget created")
 
-    def configuresellframe(self):
-        '''configures sellframe'''
+    def configuresellwidget(self):
+        '''configures sellwidget'''
+        self.batch.setFocus()
         # label
         label = self.label
         label.setText("New Sell")
@@ -458,7 +496,7 @@ class sellframe(addnewframe):
         button = self.addbutton
         button.clicked.connect(self.addfunction)
         # log
-        log("sellframe configured")
+        log("sellwidget configured")
 
     def clearfunction(self):
         '''function of clear button'''
@@ -469,14 +507,33 @@ class sellframe(addnewframe):
 
     def addfunction(self):
         '''function of add button'''
-        batch = ui.sellframe.batch.linedit.text()
-        name = ui.sellframe.name.linedit.text()
-        quantity = ui.sellframe.quantity.linedit.text()
-        price = ui.sellframe.price.linedit.text()
-        customer = ui.sellframe.customer.linedit.text()
-        selldate = ui.sellframe.selldate.linedit.text()
+        batch = ui.sellwidget.batch.linedit.text()
+        name = ui.sellwidget.name.linedit.text()
+        quantity = ui.sellwidget.quantity.linedit.text()
+        price = ui.sellwidget.price.linedit.text()
+        customer = ui.sellwidget.customer.linedit.text()
+        selldate = ui.sellwidget.selldate.linedit.text()
         info = [ batch, name, quantity, price, customer, selldate ]
         addsell(info)
+
+    def keyPressEvent(self, event):
+        '''sets up keyboard functions'''
+        lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.customer.linedit, self.selldate.linedit ]
+        if event.key() == qt.Key_Up:
+            focusedline = self.focusWidget()
+            tofocus = lines[lines.index(focusedline) - 1]
+            tofocus.setFocus()
+        elif event.key() == qt.Key_Down:
+            focusedline = self.focusWidget()
+            index = lines.index(focusedline) + 1
+            if index >= len(lines):
+                index = 0
+            tofocus = lines[index]
+            tofocus.setFocus()
+        elif event.key() == qt.Key_Return:
+            self.addbutton.animateClick()
+        elif event.key() == qt.Key_Escape:
+            self.closebutton.animateClick()
 
 ### database connection
 

@@ -1,6 +1,5 @@
 .qt_for_python
 __pycache__
 blanksheet.qss
-configuration.py
 layout.ui
 log.txt

@@ -1,7 +1,7 @@
 QMainWindow#mainwindow {
     background-color: rgb(33, 33, 33);
     color: rgb(233, 233, 233);
-    font: "Josefin Sans" 20pt;
+    font-size: 20pt;
 }
 
 QPushButton:hover#topbutton {
@@ -26,7 +26,7 @@ QPushButton#topbutton {
 }
 
 
-QWidget#topwidget {
+QFrame#topframe {
     border-radius: 30;
     background-color: transparent;
     border-style: solid;
@@ -83,4 +83,12 @@ QLabel#transparentlabel {
     color: rgb(233, 233, 233);
     padding-left: 10;
     padding-right: 10;
+}
+
+
+QLabel#searchlabel {
+    font-size: 35pt;
+    font-weight: 700;
+    background-color: transparent;
+    color: rgb(233, 233, 233);
 }

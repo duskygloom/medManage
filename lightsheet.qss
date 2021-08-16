@@ -26,7 +26,7 @@ QPushButton#topbutton {
 }
 
 
-QWidget#topwidget {
+QFrame#topframe {
     border-radius: 30;
     background-color: transparent;
     border-style: solid;
@@ -83,4 +83,10 @@ QLabel#transparentlabel {
     color: rgb(33, 33, 33);
     padding-left: 10;
     padding-right: 10;
+}
+
+
+QLabel#searchlabel {
+    font: "Josefin Sans" 35pt 700;
+    background-color: transparent;
 }

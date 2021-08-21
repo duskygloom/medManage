@@ -92,3 +92,18 @@ QLabel#searchlabel {
     background-color: transparent;
     color: rgb(233, 233, 233);
 }
+
+QFrame#searchresultframe {
+    background-color: rgb(100, 100, 100);
+    border-radius: 30;
+}
+
+QLabel#searchresultlabel {
+    font-size: 25;
+    color: rgb(233, 233, 233);
+}
+
+QPushButton#searchresultbutton {
+    border-radius: 30;
+    background-color: rgb(255, 100, 125);
+}

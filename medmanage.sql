@@ -20,13 +20,15 @@ create table sold (
     quantity int(12),
     pricerate decimal(8, 2),
     dealer varchar(100),
+    customer varchar(100),
     buydate date,
+    selldate date,
     mfgdate date,
     expdate date
 );
 
 
-create table dumpbin (
+create table dumped (
     batch varchar(50),
     medname varchar(100),
     quantity int(12),

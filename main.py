@@ -67,10 +67,12 @@ def notify(message: str):
     label.setText(message)
     log(f"notified user '{message}'")
 
-def iconize(filename: str) -> qico:
-    '''changes colour of icons'''
+def iconize(iconname: str) -> str:
+    '''changes colour of icon'''
     if conf.qsheet.startswith("light"):
-        filename = filename.replace("black", "white")
+        filename = f"resources/whiteicons/{iconname}.svg"
+    elif conf.qsheet.startswith("dark"):
+        filename = f"resources/blackicons/{iconname}.svg"
     return filename
 
 def switchtab():
@@ -404,8 +406,7 @@ class notificationwidget(qwig):
         button.setGeometry(1155, 0, 40, 40)
         button.setObjectName("duskybutton")
         button.setStyleSheet("border-radius: 20")
-        iconfile = "resources/blackicons/clear.svg"
-        button.setIcon(qico(iconize(iconfile)))
+        button.setIcon(qico(iconize("clear")))
         button.setIconSize(qsiz(30, 30))
         button.clicked.connect(self.clearnotification)
         # log
@@ -697,6 +698,40 @@ class searchcustomer(searchstage):
         self.label.setText("Customer")
         log("searchcustomer created")
 
+class searchresultframe(qfra):
+
+    def __init__(self, stage: searchstage, batch: str, table: str, position: int):
+        '''creates searchresultframe'''
+        super().__init__(stage)
+        self.batch = batch
+        self.table = table
+        self.position = position
+        self.expand = qico(iconize("expand"))
+        self.collapse = qico(iconize("collapse"))
+        self.label = qlab(self)
+        self.button = searchresultbutton(self)
+        self.configure()
+        log("searchresultframe created")
+
+    def configure(self):
+        '''configures searchresultframe'''
+        self.setGeometry(10, 180, 1130, 60)
+        self.setObjectName("searchresultframe")
+        self.label.setGeometry(30, 10, 980, 40)
+        self.label.setText(f"'{self.batch}' from '{self.table}'")
+        self.label.setObjectName("searchresultlabel")
+        self.button.setGeometry(1030, 0, 100, 60)
+        self.button.setObjectName("searchresultbutton")
+        log("searchresultframe configured")
+
+class searchresultbutton(qbut):
+
+    def __init__(self, parent: searchresultframe):
+        '''creates searchresultbutton'''
+        
+    def configure(self):
+        '''configures searchresultbutton'''
+
 ### database connection
 
 client = sql.connect(
@@ -800,7 +835,10 @@ def addsell(info: list):
         if not isexpired(batch=info[0]):
 
             # moving from stock to sold
-            command = f'''insert into sold select * from stock where batch = "{info[0]}"'''
+            command = f'''select * from stock where batch = "{info[0]}"'''
+            cursor.execute(command)
+            output = cursor.fetchone()
+            command = f'''insert into sold values ("{info[0]}", "{info[1]}", {info[2]}, {info[3]}, "{output[4]}", "{info[4]}", "{output[5].isoformat()}", "{info[5].isoformat()}", "{output[6].isoformat()}", "{output[7].isoformat()}")'''
             cursor.execute(command)
             client.commit()
             command = f'''delete from stock where batch = "{info[0]}"'''
@@ -818,10 +856,10 @@ def addsell(info: list):
         notify(f"'{info[0]}' not in stock")
 
 def dumpexpired():
-    '''moves expired medicines to dumpbin'''
+    '''moves expired medicines to dumped'''
     today = date.today().isoformat()
     # copying from stock to dumped
-    command = f'''insert into dumpbin select * from stock where expdate < "{today}"'''
+    command = f'''insert into dumped select * from stock where expdate < "{today}"'''
     cursor.execute(command)
     client.commit()
     # deleting from stock
@@ -830,6 +868,34 @@ def dumpexpired():
     client.commit()
     # log
     log("expired medicines have been dumped")
+
+def searchintables(table: str, column: str, value: str) -> list:
+    '''returns records with matching values'''
+    command = f'''select * from {table} where {column} = "{value}"'''
+    cursor.execute(command)
+    output = cursor.fetchall()
+    return output
+
+def searchdb(batch: str = None, name: str = None, dealer: str = None, customer: str = None) -> dict:
+    '''returns infodict with matching parameters'''
+    if customer is not None:
+        infodict = dict()
+        values = searchintables("sold", "customer", customer)
+        infodict["sold"] = values
+        return infodict
+    if batch is None:
+        if name is None:
+            column, value = "dealer", dealer
+        else:
+            column, value = "medname", name
+    else:
+        column, value = "batch", batch
+    tables = ["stock", "sold", "dumped"]
+    infodict = dict()
+    for i in tables:
+        values = searchintables(i, column, value)
+        infodict[i] = values
+    return infodict
 
 ### main execution
 

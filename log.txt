@@ -1,394 +1,308 @@
->>> Mon Aug 16 18:01:24 2021
+>>> Sun Aug 22 01:12:54 2021
 log: appplication created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: font setup complete
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: mainwindow configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: configured topframe
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topframe configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topframe created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topbuttons configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: adnewidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: purchasewidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: purchasewidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addnewidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: adnewidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: addfield created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: sellwidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: sellwidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: configured notificationwidget
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: notificationwidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: newbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptwidget configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchoptwidget created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbatch created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchname created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchdealer created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchlabel created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchinput created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchbutton created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage configured
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchstage created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: searchcustomer created
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: topframe refreshed
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: window refreshed
->>> Mon Aug 16 18:01:25 2021
+>>> Sun Aug 22 01:12:54 2021
 log: New tab setup
->>> Mon Aug 16 18:01:26 2021
+>>> Sun Aug 22 01:12:55 2021
 log: interface created
->>> Mon Aug 16 18:01:26 2021
+>>> Sun Aug 22 01:12:55 2021
 log: switch shortcut created
->>> Mon Aug 16 18:01:26 2021
+>>> Sun Aug 22 01:12:55 2021
 log: close shortcut created
->>> Mon Aug 16 18:01:26 2021
+>>> Sun Aug 22 01:12:55 2021
 log: darksheet.qss applied
->>> Mon Aug 16 18:01:26 2021
+>>> Sun Aug 22 01:12:55 2021
 log: expired medicines have been dumped
->>> Mon Aug 16 18:01:29 2021
+>>> Sun Aug 22 01:12:58 2021
 log: topframe refreshed
->>> Mon Aug 16 18:01:29 2021
+>>> Sun Aug 22 01:12:58 2021
 log: window refreshed
->>> Mon Aug 16 18:01:29 2021
+>>> Sun Aug 22 01:12:58 2021
 log: Search tab set up
->>> Mon Aug 16 18:01:41 2021
+>>> Sun Aug 22 01:13:06 2021
 log: backbutton pressed
->>> Mon Aug 16 18:01:44 2021
-log: backbutton pressed
->>> Mon Aug 16 18:01:48 2021
-log: backbutton pressed
->>> Mon Aug 16 18:01:51 2021
-log: backbutton pressed
->>> Mon Aug 16 18:02:08 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:08 2021
-log: window refreshed
->>> Mon Aug 16 18:02:08 2021
-log: New tab setup
->>> Mon Aug 16 18:02:10 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:10 2021
-log: window refreshed
->>> Mon Aug 16 18:02:10 2021
-log: Search tab set up
->>> Mon Aug 16 18:02:24 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:24 2021
-log: window refreshed
->>> Mon Aug 16 18:02:24 2021
-log: Stats tab set up
->>> Mon Aug 16 18:02:26 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:26 2021
-log: window refreshed
->>> Mon Aug 16 18:02:26 2021
-log: Search tab set up
->>> Mon Aug 16 18:02:28 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:28 2021
-log: window refreshed
->>> Mon Aug 16 18:02:28 2021
-log: New tab setup
->>> Mon Aug 16 18:02:31 2021
-log: topframe refreshed
->>> Mon Aug 16 18:02:31 2021
-log: window refreshed
->>> Mon Aug 16 18:02:31 2021
-log: Search tab set up
->>> Mon Aug 16 18:02:43 2021
-log: searchbutton pressed
->>> Mon Aug 16 18:02:51 2021
-log: backbutton pressed
->>> Mon Aug 16 18:02:55 2021
-log: searchbutton pressed
->>> Mon Aug 16 18:02:57 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:02 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:10 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:15 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:17 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:19 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:21 2021
-log: backbutton pressed
->>> Mon Aug 16 18:03:34 2021
-log: topframe refreshed
->>> Mon Aug 16 18:03:34 2021
-log: window refreshed
->>> Mon Aug 16 18:03:34 2021
-log: New tab setup
->>> Mon Aug 16 18:03:39 2021
-log: topframe refreshed
->>> Mon Aug 16 18:03:39 2021
-log: window refreshed
->>> Mon Aug 16 18:03:39 2021
-log: Search tab set up
->>> Mon Aug 16 18:03:45 2021
-log: topframe refreshed
->>> Mon Aug 16 18:03:45 2021
-log: window refreshed
->>> Mon Aug 16 18:03:45 2021
-log: New tab setup
->>> Mon Aug 16 18:03:47 2021
-log: topframe refreshed
->>> Mon Aug 16 18:03:47 2021
-log: window refreshed
->>> Mon Aug 16 18:03:47 2021
-log: Search tab set up
->>> Mon Aug 16 18:04:03 2021
+>>> Sun Aug 22 01:13:14 2021
 log: closing application

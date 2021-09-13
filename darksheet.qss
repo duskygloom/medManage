@@ -102,8 +102,3 @@ QLabel#searchresultlabel {
     font-size: 25;
     color: rgb(233, 233, 233);
 }
-
-QPushButton#searchresultbutton {
-    border-radius: 30;
-    background-color: rgb(255, 100, 125);
-}

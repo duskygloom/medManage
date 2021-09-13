@@ -113,7 +113,8 @@ class interface(qwig):
         self.searchname = searchname(self)
         self.searchdealer = searchdealer(self)
         self.searchcustomer = searchcustomer(self)
-        self.allwidgets = [ self.newidget, self.purchasewidget, self.sellwidget, self.searchoptwidget, self.searchbatch, self.searchname, self.searchdealer, self.searchcustomer ]
+        self.searchstage = searchstage(self)
+        self.allwidgets = [ self.newidget, self.purchasewidget, self.sellwidget, self.searchoptwidget, self.searchbatch, self.searchname, self.searchdealer, self.searchcustomer, self.searchstage ]
 
     def configure(self):
         '''configures main widget'''
@@ -458,9 +459,9 @@ class purchasewidget(addnewidget):
         '''creates purchasewidget'''
         super().__init__(stage)
         self.dealer = addfield("Manufacturer", 4, self)
-        self.buydate = addfield("Purchase Date (YYYY-MM-DD)", 5, self)
-        self.mfgdate = addfield("Manufacture Date (YYYY-MM-DD)", 6, self)
-        self.expdate = addfield("Expiry Date (YYYY-MM-DD)", 7, self)
+        self.buydate = addfield("Purchase Date: YYYY-MM-DD", 5, self)
+        self.mfgdate = addfield("Manufacture Date: YYYY-MM(-DD)", 6, self)
+        self.expdate = addfield("Expiry Date: YYYY-MM(-DD)", 7, self)
         self.configurepurchasebutton()
         log("purchasewidget created")
 
@@ -500,7 +501,7 @@ class purchasewidget(addnewidget):
         info = [ batch, name, quantity, price, dealer, buydate, mfgdate, expdate ]
         addpurchase(info)
 
-    def keyPressEvent(self, event):
+    def keyPressEvent(self, event: qkev):
         '''sets up keyboard functions'''
         lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.price.linedit, self.dealer.linedit, self.buydate.linedit, self.mfgdate.linedit, self.expdate.linedit ]
         if event.key() == qt.Key_Up:
@@ -516,6 +517,8 @@ class purchasewidget(addnewidget):
             tofocus.setFocus()
         elif event.key() == qt.Key_Return:
             self.addbutton.animateClick()
+        elif event.key() == qt.Key_PageDown:
+            self.clearbutton.animateClick()
         elif event.key() == qt.Key_Escape:
             self.closebutton.animateClick()
 
@@ -579,6 +582,8 @@ class sellwidget(addnewidget):
             tofocus.setFocus()
         elif event.key() == qt.Key_Return:
             self.addbutton.animateClick()
+        elif event.key() == qt.Key_PageDown:
+            self.clearbutton.animateClick()
         elif event.key() == qt.Key_Escape:
             self.closebutton.animateClick()
 
@@ -591,6 +596,15 @@ class searchstage(qwig):
         self.inputline = searchinput(self)
         self.searchbutton = searchbutton("Search", 0, self)
         self.backbutton = searchbutton("Back", 1, self)
+        self.previcon = qico(iconize("prev"))
+        self.nexticon = qico(iconize("next"))
+        self.prevbutton = qbut(self)
+        self.nextbutton = qbut(self)
+        self.searchresult0 = searchresultframe(self, "batch_number", "table_name", 0)
+        self.searchresult1 = searchresultframe(self, "batch_number", "table_name", 1)
+        self.searchresult2 = searchresultframe(self, "batch_number", "table_name", 2)
+        self.searchresult3 = searchresultframe(self, "batch_number", "table_name", 3)
+        self.searchresult4 = searchresultframe(self, "batch_number", "table_name", 4)
         self.configure()
         log("searchstage created")
 
@@ -600,10 +614,21 @@ class searchstage(qwig):
         self.setObjectName("transparentwidget")
         self.searchbutton.clicked.connect(self.searchfunction)
         self.backbutton.clicked.connect(self.backfunction)
+        self.prevbutton.setObjectName("duskybutton")
+        self.prevbutton.setStyleSheet("border-radius: 25")
+        self.prevbutton.setGeometry(230, 190, 50, 50)
+        self.prevbutton.setIcon(self.previcon)
+        self.prevbutton.setIconSize(qsiz(30, 30))
+        self.nextbutton.setObjectName("duskybutton")
+        self.nextbutton.setStyleSheet("border-radius: 25")
+        self.nextbutton.setGeometry(870, 190, 50, 50)
+        self.nextbutton.setIcon(self.nexticon)
+        self.nextbutton.setIconSize(qsiz(30, 30))
         log("searchstage configured")
 
     def searchfunction(self):
         '''function for searchbutton'''
+
         log("searchbutton pressed")
 
     def backfunction(self):
@@ -706,8 +731,6 @@ class searchresultframe(qfra):
         self.batch = batch
         self.table = table
         self.position = position
-        self.expand = qico(iconize("expand"))
-        self.collapse = qico(iconize("collapse"))
         self.label = qlab(self)
         self.button = searchresultbutton(self)
         self.configure()
@@ -715,22 +738,45 @@ class searchresultframe(qfra):
 
     def configure(self):
         '''configures searchresultframe'''
-        self.setGeometry(10, 180, 1130, 60)
+        y = 260 + self.position * 80
+        self.setGeometry(10, y, 1130, 60)
         self.setObjectName("searchresultframe")
         self.label.setGeometry(30, 10, 980, 40)
         self.label.setText(f"'{self.batch}' from '{self.table}'")
         self.label.setObjectName("searchresultlabel")
-        self.button.setGeometry(1030, 0, 100, 60)
-        self.button.setObjectName("searchresultbutton")
         log("searchresultframe configured")
 
 class searchresultbutton(qbut):
 
     def __init__(self, parent: searchresultframe):
         '''creates searchresultbutton'''
+        super().__init__(parent)
+        self.expand = qico(iconize("expand"))
+        self.collapse = qico(iconize("collapse"))
+        self.collapsed = True
+        self.setIconSize(qsiz(40, 40))
+        self.setIcon(self.expand)
+        self.configure()
+        log("searchresultbutton created")
         
     def configure(self):
         '''configures searchresultbutton'''
+        self.setGeometry(1030, 0, 100, 60)
+        self.setObjectName("duskybutton")
+        self.setStyleSheet("border-radius: 30")
+        self.clicked.connect(self.selfclick)
+        log("searchresultbutton created")
+
+    def selfclick(self):
+        '''function when button is clicked'''
+        if self.collapsed:
+            self.setIcon(self.collapse)
+            self.collapsed = False
+            log("medicine details expanded")
+            return
+        self.collapsed = True
+        self.setIcon(self.expand)
+        log("medicine details collapsed")
 
 ### database connection
 
@@ -901,7 +947,7 @@ def searchdb(batch: str = None, name: str = None, dealer: str = None, customer: 
 
 if __name__ == "__main__":
 
-    try:
+    # try:
 
         ## creating new log file
         if conf.concise:
@@ -946,5 +992,5 @@ if __name__ == "__main__":
         ## closing application
         closefunction(app.exec_())
 
-    except Exception as error:
-        log(error, "error")
+    # except Exception as error:
+    #     log(error, "error")

@@ -881,6 +881,7 @@ class settingstage(qwig):
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet("darksheet.qss")
+        notify("switched to dark theme")
         log("switched to dark theme")
 
     def switchtolight(self):
@@ -893,6 +894,7 @@ class settingstage(qwig):
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet("lightsheet.qss")
+        notify("switched to light theme")
         log("switched to light theme")
 
 class settingsbutton(qbut):

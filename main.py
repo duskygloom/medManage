@@ -970,7 +970,7 @@ if __name__ == "__main__":
         log("interface created")
 
         ## switching tabs with tab
-        shortkey = qkey("Tab")
+        shortkey = qkey("Ctrl+Tab")
         switch = qsho(shortkey, mainwindow)
         switch.activated.connect(switchtab)
         log("switch shortcut created")

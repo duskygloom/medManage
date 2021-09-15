@@ -41,6 +41,9 @@ QPushButton:hover#duskybutton {
 QPushButton:pressed#duskybutton {
     background-color: rgb(200, 200, 200);
 }
+QPushButton:checked#duskybutton {
+    background-color: rgb(200, 200, 200);
+}
 QPushButton#duskybutton {
 	background-color: rgb(255, 100, 125);
 	color: rgb(33, 33, 33);
@@ -100,5 +103,19 @@ QFrame#searchresultframe {
 
 QLabel#searchresultlabel {
     font-size: 25;
+    color: rgb(233, 233, 233);
+}
+
+QFrame#settingsframe {
+    background-color: transparent;
+    border-radius: 30;
+    border-color: rgb(255, 100, 125);
+    border-style: solid;
+    border-width: 5;
+}
+
+QLabel#settingsframelabel {
+    border-style: none;
+    font-size: 30pt;
     color: rgb(233, 233, 233);
 }

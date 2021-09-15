@@ -2,6 +2,7 @@
 
 import sys
 import time
+import os
 from PyQt5.QtWidgets import QApplication as qapp
 from PyQt5.QtWidgets import QMainWindow as qwin
 from PyQt5.QtWidgets import QPushButton as qbut
@@ -67,12 +68,25 @@ def notify(message: str):
     label.setText(message)
     log(f"notified user '{message}'")
 
+def iconconvert(iconname: str):
+    '''converts blackicons to whiteicons'''
+    black = f"resources/blackicons/{iconname}.svg"
+    white = f"resources/whiteicons/{iconname}.svg"
+    with open(black, "r") as rfile:
+        content = rfile.read()
+    with open(white, "w") as wfile:
+        wfile.write(content.replace("#212121", "#e9e9e9"))
+
 def iconize(iconname: str) -> str:
     '''changes colour of icon'''
-    if conf.qsheet.startswith("light"):
-        filename = f"resources/whiteicons/{iconname}.svg"
-    elif conf.qsheet.startswith("dark"):
+    if conf.qsheet.startswith("dark"):
         filename = f"resources/blackicons/{iconname}.svg"
+    elif conf.qsheet.startswith("light"):
+        if "whiteicons" not in os.listdir("resources"):
+            os.mkdir("resources/whiteicons")
+        if f"{iconname}.svg" not in os.listdir("resources/whiteicons"):
+            iconconvert(iconname)
+        filename = f"resources/whiteicons/{iconname}.svg"
     return filename
 
 def switchtab():
@@ -612,6 +626,7 @@ class searchstage(qwig):
         '''configures searchstage'''
         self.setGeometry(25, 100, 1150, 650)
         self.setObjectName("transparentwidget")
+        self.label.setGeometry(225, 15, 700, 55)
         self.searchbutton.clicked.connect(self.searchfunction)
         self.backbutton.clicked.connect(self.backfunction)
         self.prevbutton.setObjectName("duskybutton")

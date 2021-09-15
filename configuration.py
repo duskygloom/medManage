@@ -14,4 +14,4 @@ concise = True
 
 ### theme info
 
-qsheet = "darksheet.qss"
+qsheet = "lightsheet.qss"

@@ -94,7 +94,7 @@ QLabel#searchlabel {
 }
 
 QFrame#searchresultframe {
-    background-color: rgb(100, 100, 100);
+    background-color: rgba(100, 100, 100, 100);
     border-radius: 30;
 }
 

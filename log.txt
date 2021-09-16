@@ -1,640 +1,534 @@
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
 log: appplication created
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
 log: font setup complete
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
 log: mainwindow configured
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
 log: configured topframe
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
-log: topbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: topbutton created
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96790> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96790> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96820> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96820> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b969d0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b969d0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96b80> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96b80> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96d30> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96d30> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96f70> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topbutton object at 0x70d1b96f70> created
+>>> Thu Sep 16 20:39:41 2021
 log: topframe configured
->>> Thu Sep 16 01:17:34 2021
-log: topframe created
->>> Thu Sep 16 01:17:34 2021
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.topframe object at 0x70d1b96700> created
+>>> Thu Sep 16 20:39:41 2021
 log: topbuttons configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newidget configured
->>> Thu Sep 16 01:17:34 2021
-log: newidget created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewidget configured
->>> Thu Sep 16 01:17:34 2021
-log: adnewidget created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: purchasewidget configured
->>> Thu Sep 16 01:17:34 2021
-log: purchasewidget created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: addnewbutton created
->>> Thu Sep 16 01:17:34 2021
-log: addnewidget configured
->>> Thu Sep 16 01:17:34 2021
-log: adnewidget created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: addfield configured
->>> Thu Sep 16 01:17:34 2021
-log: addfield created
->>> Thu Sep 16 01:17:34 2021
-log: sellwidget configured
->>> Thu Sep 16 01:17:34 2021
-log: sellwidget created
->>> Thu Sep 16 01:17:34 2021
-log: configured notificationwidget
->>> Thu Sep 16 01:17:34 2021
-log: notificationwidget created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newidget configured
->>> Thu Sep 16 01:17:34 2021
-log: newidget created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton created
->>> Thu Sep 16 01:17:34 2021
-log: newbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: newbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchoptbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchoptwidget configured
->>> Thu Sep 16 01:17:34 2021
-log: searchoptwidget created
->>> Thu Sep 16 01:17:34 2021
-log: searchlabel configured
->>> Thu Sep 16 01:17:34 2021
-log: searchlabel created
->>> Thu Sep 16 01:17:34 2021
-log: searchinput configured
->>> Thu Sep 16 01:17:34 2021
-log: searchinput created
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchstage configured
->>> Thu Sep 16 01:17:34 2021
-log: searchstage created
->>> Thu Sep 16 01:17:34 2021
-log: searchbatch created
->>> Thu Sep 16 01:17:34 2021
-log: searchlabel configured
->>> Thu Sep 16 01:17:34 2021
-log: searchlabel created
->>> Thu Sep 16 01:17:34 2021
-log: searchinput configured
->>> Thu Sep 16 01:17:34 2021
-log: searchinput created
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:34 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:34 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchstage configured
->>> Thu Sep 16 01:17:35 2021
-log: searchstage created
->>> Thu Sep 16 01:17:35 2021
-log: searchname created
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel configured
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel created
->>> Thu Sep 16 01:17:35 2021
-log: searchinput configured
->>> Thu Sep 16 01:17:35 2021
-log: searchinput created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchstage configured
->>> Thu Sep 16 01:17:35 2021
-log: searchstage created
->>> Thu Sep 16 01:17:35 2021
-log: searchdealer created
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel configured
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel created
->>> Thu Sep 16 01:17:35 2021
-log: searchinput configured
->>> Thu Sep 16 01:17:35 2021
-log: searchinput created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchstage configured
->>> Thu Sep 16 01:17:35 2021
-log: searchstage created
->>> Thu Sep 16 01:17:35 2021
-log: searchcustomer created
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel configured
->>> Thu Sep 16 01:17:35 2021
-log: searchlabel created
->>> Thu Sep 16 01:17:35 2021
-log: searchinput configured
->>> Thu Sep 16 01:17:35 2021
-log: searchinput created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton configured
->>> Thu Sep 16 01:17:35 2021
-log: searchbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultbutton created
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe configured
->>> Thu Sep 16 01:17:35 2021
-log: searchresultframe created
->>> Thu Sep 16 01:17:35 2021
-log: searchstage configured
->>> Thu Sep 16 01:17:35 2021
-log: searchstage created
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsbutton object at 0x7c66d71280> configured
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsbutton object at 0x7c66d71280> created
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsbutton object at 0x7c66d71310> configured
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsbutton object at 0x7c66d71310> created
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsoption object at 0x7c66d714c0> configured
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingsoption object at 0x7c66d714c0> created
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingstage object at 0x7c66d71040> configured
->>> Thu Sep 16 01:17:35 2021
-log: <__main__.settingstage object at 0x7c66d71040> created
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newstage object at 0x70d1b96e50> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newstage object at 0x70d1b96e50> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70d1bb33a0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70d1bb33a0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70d1bb3550> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70d1bb3550> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newstage object at 0x70d1b96e50> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newstage object at 0x70d1b96e50> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3a60> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3a60> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3c10> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3c10> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3ee0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb3ee0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb71f0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb71f0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb74c0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb74c0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb7670> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb7670> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb7820> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70d1bb7820> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.purchasewidget object at 0x70d1bb3700> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.purchasewidget object at 0x70d1bb3700> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb79d0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb79d0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb7dc0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb7dc0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb90d0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb90d0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb93a0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb93a0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.purchasewidget object at 0x70d1bb3700> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.purchasewidget object at 0x70d1bb3700> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb99d0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb99d0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb9b80> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb9b80> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb9e50> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70d1bb9e50> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48c160> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48c160> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c430> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c430> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c5e0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c5e0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c790> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addnewbutton object at 0x70cb48c790> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.sellwidget object at 0x70d1bb9670> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.sellwidget object at 0x70d1bb9670> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48c940> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48c940> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48cd30> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.addfield object at 0x70cb48cd30> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.sellwidget object at 0x70d1bb9670> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.sellwidget object at 0x70d1bb9670> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.notificationwidget object at 0x70cb48e040> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.notificationwidget object at 0x70cb48e040> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70cb48e5e0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70cb48e5e0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70cb48e790> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.newbutton object at 0x70cb48e790> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48e940> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48e940> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48e940> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48e940> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48ec10> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48ec10> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48ec10> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48ec10> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48eee0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48eee0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48eee0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70cb48eee0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70d1b968b0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70d1b968b0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70d1b968b0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchoptbutton object at 0x70d1b968b0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchstage object at 0x70cb48e430> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchlabel object at 0x70d1bb31f0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchlabel object at 0x70d1bb31f0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchinput object at 0x70d1bb3280> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchinput object at 0x70d1bb3280> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchbutton object at 0x70d1bb34c0> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchbutton object at 0x70d1bb34c0> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchbutton object at 0x70d1bb3820> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchbutton object at 0x70d1bb3820> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultbutton object at 0x70d1bb7700> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultbutton object at 0x70d1bb7700> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultframe object at 0x70d1bb7550> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultframe object at 0x70d1bb7550> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultbutton object at 0x70d1bb7c10> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultbutton object at 0x70d1bb7c10> created
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultframe object at 0x70d1bb3670> configured
+>>> Thu Sep 16 20:39:41 2021
+log: <__main__.searchresultframe object at 0x70d1bb3670> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1bb9790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1bb9790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb9160> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb9160> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48c280> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48c280> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb9c10> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb9c10> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48ca60> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48ca60> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb48c670> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb48c670> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbatch object at 0x70d1b96af0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbatch object at 0x70d1b96af0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbatch object at 0x70d1b96af0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70cb48e670> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70cb48e670> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70cb48e700> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70cb48e700> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48e9d0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48e9d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48eb80> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48eb80> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493310> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493310> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4931f0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4931f0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4934c0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4934c0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493c10> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493c10> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493940> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493940> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb4940d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb4940d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493dc0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493dc0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494550> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494550> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb494280> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb494280> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchname object at 0x70cb48cdc0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchname object at 0x70cb48cdc0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchname object at 0x70cb48cdc0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70cb494af0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70cb494af0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70cb494b80> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70cb494b80> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb494d30> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb494d30> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb494ee0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb494ee0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496550> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496550> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496430> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496430> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb4969d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb4969d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496700> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496700> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496e50> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496e50> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496b80> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496b80> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1b96ca0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1b96ca0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1b96940> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1b96940> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1bb3790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70d1bb3790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb3040> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70d1bb3040> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchdealer object at 0x70cb494700> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchdealer object at 0x70cb494700> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchdealer object at 0x70cb494700> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70d1bb9ca0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchlabel object at 0x70d1bb9ca0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70d1bb9ee0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchinput object at 0x70d1bb9ee0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48c820> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70cb48c820> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70d1bb91f0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchbutton object at 0x70d1bb91f0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48ed30> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb48ed30> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb48eaf0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb48eaf0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493af0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb493af0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493550> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493550> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494820> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494820> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493f70> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb493f70> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494e50> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb494e50> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4949d0> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb4949d0> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496c10> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultbutton object at 0x70cb496c10> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496160> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchresultframe object at 0x70cb496160> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchcustomer object at 0x70d1bb3d30> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchcustomer object at 0x70d1bb3d30> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.searchcustomer object at 0x70d1bb3d30> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingstage object at 0x70cb499040> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingstage object at 0x70cb499040> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsbutton object at 0x70cb499700> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsbutton object at 0x70cb499700> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsbutton object at 0x70cb499790> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsbutton object at 0x70cb499790> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsoption object at 0x70cb499940> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingsoption object at 0x70cb499940> created
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingstage object at 0x70cb499040> configured
+>>> Thu Sep 16 20:39:42 2021
+log: <__main__.settingstage object at 0x70cb499040> created
+>>> Thu Sep 16 20:39:42 2021
 log: topframe refreshed
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:42 2021
 log: window refreshed
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:42 2021
 log: New tab setup
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:43 2021
 log: interface created
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:43 2021
 log: switch shortcut created
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:43 2021
 log: close shortcut created
->>> Thu Sep 16 01:17:35 2021
+>>> Thu Sep 16 20:39:43 2021
 log: darksheet.qss applied
->>> Thu Sep 16 01:17:36 2021
+>>> Thu Sep 16 20:39:43 2021
 log: expired medicines have been dumped
->>> Thu Sep 16 01:17:40 2021
+>>> Thu Sep 16 20:39:50 2021
 log: topframe refreshed
->>> Thu Sep 16 01:17:40 2021
+>>> Thu Sep 16 20:39:50 2021
 log: window refreshed
->>> Thu Sep 16 01:17:40 2021
-log: Settings tab set up
->>> Thu Sep 16 01:17:42 2021
-log: themes shown
->>> Thu Sep 16 01:17:45 2021
-log: darksheet.qss applied
->>> Thu Sep 16 01:17:45 2021
-log: notified user 'switched to dark theme'
->>> Thu Sep 16 01:17:45 2021
-log: switched to dark theme
->>> Thu Sep 16 01:17:53 2021
-log: lightsheet.qss applied
->>> Thu Sep 16 01:17:53 2021
-log: notified user 'switched to light theme'
->>> Thu Sep 16 01:17:53 2021
-log: switched to light theme
->>> Thu Sep 16 01:17:56 2021
-log: darksheet.qss applied
->>> Thu Sep 16 01:17:56 2021
-log: notified user 'switched to dark theme'
->>> Thu Sep 16 01:17:56 2021
-log: switched to dark theme
->>> Thu Sep 16 01:17:59 2021
-log: lightsheet.qss applied
->>> Thu Sep 16 01:17:59 2021
-log: notified user 'switched to light theme'
->>> Thu Sep 16 01:17:59 2021
-log: switched to light theme
->>> Thu Sep 16 01:18:01 2021
-log: darksheet.qss applied
->>> Thu Sep 16 01:18:01 2021
-log: notified user 'switched to dark theme'
->>> Thu Sep 16 01:18:01 2021
-log: switched to dark theme
->>> Thu Sep 16 01:18:06 2021
-log: themes shown
->>> Thu Sep 16 01:18:11 2021
-log: notification cleared
->>> Thu Sep 16 01:18:23 2021
-log: topframe refreshed
->>> Thu Sep 16 01:18:23 2021
-log: window refreshed
->>> Thu Sep 16 01:18:23 2021
-log: Note tab set up
->>> Thu Sep 16 01:18:28 2021
-log: topframe refreshed
->>> Thu Sep 16 01:18:28 2021
-log: window refreshed
->>> Thu Sep 16 01:18:28 2021
-log: Settings tab set up
->>> Thu Sep 16 01:18:40 2021
-log: themes shown
->>> Thu Sep 16 01:18:44 2021
-log: lightsheet.qss applied
->>> Thu Sep 16 01:18:44 2021
-log: notified user 'switched to light theme'
->>> Thu Sep 16 01:18:44 2021
-log: switched to light theme
->>> Thu Sep 16 01:18:47 2021
-log: darksheet.qss applied
->>> Thu Sep 16 01:18:47 2021
-log: notified user 'switched to dark theme'
->>> Thu Sep 16 01:18:47 2021
-log: switched to dark theme
->>> Thu Sep 16 01:18:52 2021
-log: notification cleared
->>> Thu Sep 16 01:19:07 2021
-log: topframe refreshed
->>> Thu Sep 16 01:19:07 2021
-log: window refreshed
->>> Thu Sep 16 01:19:07 2021
-log: New tab setup
->>> Thu Sep 16 01:19:19 2021
-log: topframe refreshed
->>> Thu Sep 16 01:19:19 2021
-log: window refreshed
->>> Thu Sep 16 01:19:19 2021
+>>> Thu Sep 16 20:39:50 2021
 log: Search tab set up
->>> Thu Sep 16 01:19:26 2021
+>>> Thu Sep 16 20:39:51 2021
 log: topframe refreshed
->>> Thu Sep 16 01:19:26 2021
+>>> Thu Sep 16 20:39:51 2021
 log: window refreshed
->>> Thu Sep 16 01:19:26 2021
+>>> Thu Sep 16 20:39:51 2021
 log: Stats tab set up
->>> Thu Sep 16 01:19:29 2021
+>>> Thu Sep 16 20:39:51 2021
 log: topframe refreshed
->>> Thu Sep 16 01:19:29 2021
+>>> Thu Sep 16 20:39:51 2021
 log: window refreshed
->>> Thu Sep 16 01:19:29 2021
+>>> Thu Sep 16 20:39:51 2021
 log: Chart tab set up
->>> Thu Sep 16 01:19:31 2021
+>>> Thu Sep 16 20:39:51 2021
 log: topframe refreshed
->>> Thu Sep 16 01:19:31 2021
+>>> Thu Sep 16 20:39:51 2021
 log: window refreshed
->>> Thu Sep 16 01:19:31 2021
+>>> Thu Sep 16 20:39:51 2021
+log: Note tab set up
+>>> Thu Sep 16 20:39:52 2021
+log: topframe refreshed
+>>> Thu Sep 16 20:39:52 2021
+log: window refreshed
+>>> Thu Sep 16 20:39:52 2021
+log: Settings tab set up
+>>> Thu Sep 16 20:39:52 2021
+log: topframe refreshed
+>>> Thu Sep 16 20:39:52 2021
+log: window refreshed
+>>> Thu Sep 16 20:39:52 2021
 log: New tab setup
->>> Thu Sep 16 01:19:40 2021
+>>> Thu Sep 16 20:39:53 2021
+log: topframe refreshed
+>>> Thu Sep 16 20:39:53 2021
+log: window refreshed
+>>> Thu Sep 16 20:39:53 2021
+log: Search tab set up
+>>> Thu Sep 16 20:39:55 2021
 log: closing application

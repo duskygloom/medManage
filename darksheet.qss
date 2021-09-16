@@ -55,7 +55,7 @@ QPushButton#duskybutton {
 }
 
 
-QLabel#newlabel {
+QLabel#tabstagelabel {
     background-color: transparent;
     color: rgb(233, 233, 233);
     font-size: 75pt;

@@ -1,6 +1,7 @@
 .qt_for_python
 __pycache__
 resources/whiteicons
+resources/note.txt
 blanksheet.qss
 layout.ui
 log.txt

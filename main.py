@@ -3,6 +3,7 @@
 import sys
 import time
 import os
+from PyQt5.QtWidgets import QPlainTextEdit as qtxt
 from PyQt5.QtWidgets import QApplication as qapp
 from PyQt5.QtWidgets import QMainWindow as qwin
 from PyQt5.QtWidgets import QPushButton as qbut
@@ -13,6 +14,7 @@ from PyQt5.QtWidgets import QFrame as qfra
 from PyQt5.QtWidgets import QLabel as qlab
 from PyQt5.QtGui import QIcon as qico
 from PyQt5.QtGui import QFont as qfon
+from PyQt5.QtGui import QTextCursor as qcur
 from PyQt5.QtGui import QFontDatabase as qfdb
 from PyQt5.QtGui import QKeyEvent as qkev
 from PyQt5.QtGui import QKeySequence as qkey
@@ -24,6 +26,10 @@ import configuration as conf
 
 handcursor = qt.PointingHandCursor
 centeralign = qt.AlignCenter
+if "dark" in conf.qsheet:
+    theme = "dark"
+else:
+    theme = "light"
 
 ### functions
 
@@ -85,9 +91,9 @@ def iconconvert(iconname: str):
 
 def iconize(iconname: str) -> str:
     '''changes colour of icon'''
-    if conf.qsheet.startswith("dark"):
+    if theme == "dark":
         filename = f"resources/blackicons/{iconname}.svg"
-    elif conf.qsheet.startswith("light"):
+    elif theme == "light":
         if "whiteicons" not in os.listdir("resources"):
             os.mkdir("resources/whiteicons")
         if f"{iconname}.svg" not in os.listdir("resources/whiteicons"):
@@ -135,7 +141,10 @@ class interface(qwig):
         self.searchdealer = searchdealer(self)
         self.searchcustomer = searchcustomer(self)
         self.settingstage = settingstage(self)
-        self.allwidgets = [ self.newstage, self.purchasewidget, self.sellwidget, self.searchstage, self.searchbatch, self.searchname, self.searchdealer, self.searchcustomer, self.settingstage ]
+        self.notestage = notestage(self)
+        self.chartstage = chartstage(self)
+        self.statstage = statstage(self)
+        self.allwidgets = [ self.newstage, self.purchasewidget, self.sellwidget, self.searchstage, self.searchbatch, self.searchname, self.searchdealer, self.searchcustomer, self.settingstage, self.notestage, self.chartstage, self.statstage ]
 
     def configure(self):
         '''configures main widget'''
@@ -178,19 +187,20 @@ class interface(qwig):
     def setupstats(self):
         '''sets up Stats tab'''
         refreshtopframe("Stats")
-        refreshwindow()
+        refreshwindow(self.statstage)
         log("Stats tab set up")
 
     def setupchart(self):
         '''sets up Charts tab'''
         refreshtopframe("Chart")
-        refreshwindow()
+        refreshwindow(self.chartstage)
         log("Chart tab set up")
 
     def setupnote(self):
         '''sets up Note tab'''
         refreshtopframe("Note")
-        refreshwindow()
+        refreshwindow(self.notestage)
+        self.notestage.textbox.setFocus()
         log("Note tab set up")
     
     def setupsettings(self):
@@ -892,6 +902,7 @@ class settingstage(tabstage):
 
     def switchtodark(self):
         '''changes to dark theme'''
+        global theme
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
         for i in range(len(lines)):
@@ -900,11 +911,13 @@ class settingstage(tabstage):
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet("darksheet.qss")
+        theme = "dark"
         notify("switched to dark theme")
         log("switched to dark theme")
 
     def switchtolight(self):
         '''changes to light theme'''
+        global theme
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
         for i in range(len(lines)):
@@ -913,6 +926,7 @@ class settingstage(tabstage):
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet("lightsheet.qss")
+        theme = "light"
         notify("switched to light theme")
         log("switched to light theme")
 
@@ -959,11 +973,119 @@ class notestage(tabstage):
     def __init__(self, stage: qwig):
         '''creates notestage'''
         super().__init__(stage)
+        self.textbox = qtxt(self)
+        self.clear = notebutton(self, 0)
+        self.save  = notebutton(self, 1)
+        self.load  = notebutton(self, 2)
         self.configurenote()
         log(f"{self} created")
 
     def configurenote(self):
         '''configures notestage'''
+        # label
+        self.label.setText("Note")
+        # plain textedit
+        self.textbox.setGeometry(10, 190, 1080, 400)
+        self.textbox.setObjectName("notebox")
+        if "note.txt" in os.listdir("resources"):
+            with open("resources/note.txt", "r") as rfile:
+                content = rfile.read()
+                if content == "":
+                    self.textbox.setPlaceholderText("Type note...")
+                else:
+                    self.textbox.setPlainText(content)
+                    self.textbox.moveCursor(qcur.End)
+        else:
+            self.textbox.setPlaceholderText("Type note...")
+        # save button
+        self.save.setIcon(qico(iconize("save")))
+        self.save.clicked.connect(self.savefunction)
+        # clear button
+        self.clear.setIcon(qico(iconize("delete")))
+        self.clear.clicked.connect(self.clearfunction)
+        # load button
+        self.load.setIcon(qico(iconize("reload")))
+        self.load.clicked.connect(self.loadfunction)
+        # log
+        log(f"{self} configured")
+
+    def savefunction(self):
+        '''function for save button'''
+        with open("resources/note.txt", "w") as wfile:
+            wfile.write(self.textbox.toPlainText())
+        self.textbox.setFocus()
+        self.textbox.moveCursor(qcur.End)
+        notify("note saved")
+        log("note saved")
+
+    def clearfunction(self):
+        '''function of clear button'''
+        self.textbox.setPlaceholderText("Type note...")
+        self.textbox.clear()
+        self.textbox.setFocus()
+        log("note textbox cleared")
+
+    def loadfunction(self):
+        '''function of clear button'''
+        if "note.txt" in os.listdir("resources"):
+            with open("resources/note.txt", "r") as rfile:
+                self.textbox.setPlainText(rfile.read())
+        else:
+            notify("no saved note")
+        self.textbox.setFocus()
+        self.textbox.moveCursor(qcur.End)
+        log("loaded note")
+
+class notebutton(qbut):
+    
+    def __init__(self, stage: notestage, position: int):
+        '''creates notebutton'''
+        super().__init__(stage)
+        self.position = position
+        self.configure()
+        log(f"{self} created")
+
+    def configure(self):
+        '''configures notebutton'''
+        x = 1030 - self.position * 60
+        self.setGeometry(x, 150, 50, 50)
+        self.setObjectName("duskybutton")
+        self.setStyleSheet("border-radius: 25")
+        self.setIconSize(qsiz(30, 30))
+        log(f"{self} configured")
+
+# stats
+
+class statstage(tabstage):
+
+    def __init__(self, stage: qwig):
+        '''creates statstage'''
+        super().__init__(stage)
+        self.configurestats()
+        log(f"{self} created")
+
+    def configurestats(self):
+        '''configures statstage'''
+        # label
+        self.label.setText("Stats")
+        # log
+        log(f"{self} configured")
+
+# chart
+
+class chartstage(tabstage):
+
+    def __init__(self, stage: qwig):
+        '''creates chartstage'''
+        super().__init__(stage)
+        self.configurechart()
+        log(f"{self} created")
+
+    def configurechart(self):
+        '''configures chartstage'''
+        # label
+        self.label.setText("Chart")
+        # log
         log(f"{self} configured")
 
 

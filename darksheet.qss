@@ -119,3 +119,35 @@ QLabel#settingsframelabel {
     font-size: 30pt;
     color: rgb(233, 233, 233);
 }
+
+
+QPlainTextEdit#notebox {
+    background-color: transparent;
+    border-style: solid;
+    border-color: rgb(255, 100, 125);
+    border-width: 5;
+    border-radius: 20;
+    font-size: 20pt;
+    color: rgb(233, 233, 233);
+    padding: 10 10 10 10;
+}
+
+
+QScrollBar {
+    background-color: rgba(100, 100, 100, 100);
+    width: 10px;
+    border-radius: 5;
+}
+QScrollBar:handle {
+    background-color: rgb(255, 100, 125);
+    border-radius: 5;
+    min-height: 20px;
+}
+QScrollBar:add-line {
+    border: none;
+    background: none;
+}
+QScrollBar:sub-line {
+    border: none;
+    background: none;
+}

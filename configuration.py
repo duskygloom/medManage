@@ -12,6 +12,6 @@ database = "medmanage"
 concise = True
 
 
-### theme info
+### theme
 
 qsheet = 'darksheet.qss'

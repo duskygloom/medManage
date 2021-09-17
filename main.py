@@ -30,12 +30,13 @@ if "dark" in conf.qsheet:
     theme = "dark"
 else:
     theme = "light"
+logging = conf.concise
 
 ### functions
 
 def log(message: str, category: str = "log"):
     '''logs message to terminal'''
-    if conf.concise:
+    if logging:
         ## printing on console
         text = f">>> {time.asctime()}\n{category}: {message}"
         print(text)
@@ -56,14 +57,14 @@ def closefunction(status: int = 0):
         logfile.close()
     app.exit(status)
 
-def refreshtopframe(tabname: str):
+def refreshcheckedbuttons(buttontext: str, allbuttons: list):
     '''clicks and unclicks topbuttons'''
-    for i in ui.alltopbuttons:
-        if i.text == tabname:
+    for i in allbuttons:
+        if i.text == buttontext:
             i.setChecked(True)
         else:
             i.setChecked(False)
-    log("topframe refreshed")
+    log("checked buttons refreshed")
 
 def refreshwindow(*required):
     '''shows and hides widgets'''
@@ -101,15 +102,23 @@ def iconize(iconname: str) -> str:
         filename = f"resources/whiteicons/{iconname}.svg"
     return filename
 
-def switchtab():
-    '''switches tabs'''
+def switchtab(style: int = 0):
+    '''switches tabs
+       style 0 is left to right
+       style 1 is right to left'''
     tabs = ui.alltopbuttons
     for i in range(len(tabs)):
         if tabs[i].isChecked():
-            index = i + 1
-            break
-    if index >= len(tabs):
-        index = 0
+            if style == 0:
+                index = i + 1
+                if index >= len(tabs):
+                    index = 0
+                break
+            elif style == 1:
+                index = i - 1
+                if index <= -1:
+                    index = len(tabs) - 1
+                break        
     tabs[index].animateClick()
 
 ### classes
@@ -174,38 +183,38 @@ class interface(qwig):
 
     def setupnew(self):
         '''sets up New tab'''
-        refreshtopframe("New")
+        refreshcheckedbuttons("New", ui.alltopbuttons)
         refreshwindow(self.newstage)
         log("New tab setup")
 
     def setupsearch(self):
         '''sets up Search tab'''
-        refreshtopframe("Search")
+        refreshcheckedbuttons("Search", ui.alltopbuttons)
         refreshwindow(self.searchstage)
         log("Search tab set up")
 
     def setupstats(self):
         '''sets up Stats tab'''
-        refreshtopframe("Stats")
+        refreshcheckedbuttons("Stats", ui.alltopbuttons)
         refreshwindow(self.statstage)
         log("Stats tab set up")
 
     def setupchart(self):
         '''sets up Charts tab'''
-        refreshtopframe("Chart")
+        refreshcheckedbuttons("Chart", ui.alltopbuttons)
         refreshwindow(self.chartstage)
         log("Chart tab set up")
 
     def setupnote(self):
         '''sets up Note tab'''
-        refreshtopframe("Note")
+        refreshcheckedbuttons("Note", ui.alltopbuttons)
         refreshwindow(self.notestage)
         self.notestage.textbox.setFocus()
         log("Note tab set up")
     
     def setupsettings(self):
         '''sets up Settings tab'''
-        refreshtopframe("Settings")
+        refreshcheckedbuttons("Settings", ui.alltopbuttons)
         refreshwindow(self.settingstage)
         log("Settings tab set up")
 
@@ -289,6 +298,7 @@ class newbutton(qbut):
         y = 250 + 110 * self.position[1]
         self.setObjectName("duskybutton")
         self.setText(self.text)
+        self.setCursor(handcursor)
         self.setGeometry(x, y, 200, 75)
         self.setStyleSheet("border-radius: 37; font-size: 25pt;")
         log(f"{self} configured")
@@ -372,6 +382,7 @@ class addnewbutton(qbut):
         x = 30 + 150 * self.position
         self.setGeometry(x, 520, 130, 50)
         self.setObjectName("duskybutton")
+        self.setCursor(handcursor)
         self.setStyleSheet("border-radius: 25")
         self.setText(self.name)
         log(f"{self} configured")
@@ -415,6 +426,7 @@ class notificationwidget(qwig):
         button.setStyleSheet("border-radius: 20")
         button.setIcon(qico(iconize("clear")))
         button.setIconSize(qsiz(30, 30))
+        button.setCursor(handcursor)
         button.clicked.connect(self.clearnotification)
         # log
         log(f"{self} configured")
@@ -468,10 +480,10 @@ class purchasewidget(addnewidget):
         self.buydate = addfield("Purchase Date: YYYY-MM-DD", 5, self)
         self.mfgdate = addfield("Manufacture Date: YYYY-MM(-DD)", 6, self)
         self.expdate = addfield("Expiry Date: YYYY-MM(-DD)", 7, self)
-        self.configurepurchasebutton()
+        self.conifgurepurchasewidget()
         log(f"{self} created")
 
-    def configurepurchasebutton(self):
+    def conifgurepurchasewidget(self):
         '''configures purchasewidget'''
         self.batch.setFocus()
         # label
@@ -682,6 +694,7 @@ class searchwidget(qwig):
         self.prevbutton.setStyleSheet("border-radius: 25")
         self.prevbutton.setGeometry(230, 190, 50, 50)
         self.prevbutton.setIcon(self.previcon)
+        self.prevbutton.setCursor(handcursor)
         self.prevbutton.setIconSize(qsiz(30, 30))
         # nextbutton
         self.nextbutton.setObjectName("duskybutton")
@@ -689,6 +702,7 @@ class searchwidget(qwig):
         self.nextbutton.setGeometry(870, 190, 50, 50)
         self.nextbutton.setIcon(self.nexticon)
         self.nextbutton.setIconSize(qsiz(30, 30))
+        self.nextbutton.setCursor(handcursor)
         # buttons
         self.searchbutton.clicked.connect(self.searchfunction)
         self.backbutton.clicked.connect(self.backfunction)
@@ -766,6 +780,7 @@ class searchbutton(qbut):
         x = 410 + 180 * self.position
         self.setGeometry(x, 150, 150, 40)
         self.setText(self.text)
+        self.setCursor(handcursor)
         log(f"{self} configured")
 
 class searchname(searchwidget):
@@ -833,6 +848,7 @@ class searchresultbutton(qbut):
         self.setGeometry(1030, 0, 100, 60)
         self.setObjectName("duskybutton")
         self.setStyleSheet("border-radius: 30")
+        self.setCursor(handcursor)
         self.clicked.connect(self.selfclick)
         log(f"{self} created")
 
@@ -856,9 +872,15 @@ class settingstage(tabstage):
         super().__init__(stage)
         self.frame = qfra(self)
         self.framelabel = qlab(self.frame)
-        self.dark = settingsbutton(self.frame, (0, 0))
+        self.dark  = settingsbutton(self.frame, (0, 0))
         self.light = settingsbutton(self.frame, (1, 0))
         self.themeoption = settingsoption(self, 0)
+        self.logoption   = settingsoption(self, 1)
+        self.logyes = settingsbutton(self.frame, (0, 0))
+        self.logno  = settingsbutton(self.frame, (1, 0))
+        self.alloptions = [ self.themeoption, self.logoption ]
+        self.allbuttons = [ self.dark, self.light, self.logyes, self.logno ]
+        self.themeoption.animateClick()
         self.configuresettings()
         log(f"{self} created")
 
@@ -867,10 +889,6 @@ class settingstage(tabstage):
         # self
         self.setGeometry(50, 120, 1100, 600)
         self.setObjectName("transparentwidget")
-        # hiding buttons
-        buttons = [ self.dark, self.light ]
-        for i in buttons:
-            i.setVisible(False)
         # label
         self.label.setText("Settings")
         # frame
@@ -883,52 +901,67 @@ class settingstage(tabstage):
         # theme
         self.themeoption.setText("Theme")
         self.themeoption.clicked.connect(self.showthemes)
+        # log
+        self.logoption.setText("Logging")
+        self.logoption.clicked.connect(self.showlogging)
         # buttons
         self.dark.setText("dark")
-        self.dark.clicked.connect(self.switchtodark)
+        self.dark.clicked.connect(lambda: self.switchtheme("dark"))
         self.light.setText("light")
-        self.light.clicked.connect(self.switchtolight)
+        self.light.clicked.connect(lambda: self.switchtheme("light"))
+        self.logyes.setText("Yes")
+        self.logyes.clicked.connect(lambda: self.createlog(True))
+        self.logno.setText("No")
+        self.logno.clicked.connect(lambda: self.createlog(False))
         # log
         log(f"{self} configured")
 
     def showthemes(self):
         '''function to change theme'''
         self.framelabel.setText("Themes")
-        check = self.themeoption.isChecked()
         widgets = [ self.frame, self.framelabel, self.dark, self.light ]
         for i in widgets:
-            i.setVisible(check)
+            i.setVisible(True)
+        for i in self.allbuttons:
+            if i not in widgets:
+                i.setVisible(False)
         log("themes shown")
 
-    def switchtodark(self):
+    def switchtheme(self, themename: str):
         '''changes to dark theme'''
         global theme
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
-        for i in range(len(lines)):
-            if lines[i].startswith("qsheet"):
-                lines[i] = "qsheet = 'darksheet.qss'"
+        lines[16] = f"qsheet = '{themename}sheet.qss'\n"
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
-        applyqsheet("darksheet.qss")
-        theme = "dark"
-        notify("switched to dark theme")
-        log("switched to dark theme")
+        applyqsheet(f"{themename}sheet.qss")
+        theme = themename
+        notify(f"switched to {themename} theme")
+        log(f"switched to {themename} theme")
 
-    def switchtolight(self):
-        '''changes to light theme'''
-        global theme
+    def showlogging(self):
+        '''function to change logginig status'''
+        self.framelabel.setText("Logging")
+        widgets = [ self.frame, self.framelabel, self.logyes, self.logno ]
+        for i in widgets:
+            i.setVisible(True)
+        for i in self.allbuttons:
+            if i not in widgets:
+                i.setVisible(False)
+        log("logging shown")
+
+    def createlog(self, status: bool = True):
+        '''toggles the option for logging'''
+        global logging
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
-        for i in range(len(lines)):
-            if lines[i].startswith("qsheet"):
-                lines[i] = "qsheet = 'lightsheet.qss'"
+        lines[11] = f"concise = {status}\n"
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
-        applyqsheet("lightsheet.qss")
-        theme = "light"
-        notify("switched to light theme")
-        log("switched to light theme")
+        logging = status
+        log(f"logging set to {status}")
+        notify(f"logging set to {status}")
 
 class settingsbutton(qbut):
 
@@ -946,6 +979,7 @@ class settingsbutton(qbut):
         y = 170 + self.y * 90
         self.setGeometry(x, y, 150, 50)
         self.setObjectName("duskybutton")
+        self.setCursor(handcursor)
         log(f"{self} configured")
 
 class settingsoption(qbut):
@@ -964,6 +998,7 @@ class settingsoption(qbut):
         self.setObjectName("duskybutton")
         self.setStyleSheet('''border-radius: 20; padding-left: 25; padding-right: 5;''')
         self.setCheckable(True)
+        self.setCursor(handcursor)
         log(f"{self} configured")
 
 # note
@@ -1052,6 +1087,7 @@ class notebutton(qbut):
         self.setObjectName("duskybutton")
         self.setStyleSheet("border-radius: 25")
         self.setIconSize(qsiz(30, 30))
+        self.setCursor(handcursor)
         log(f"{self} configured")
 
 # stats
@@ -1284,6 +1320,9 @@ if __name__ == "__main__":
         shortkey = qkey("Ctrl+Tab")
         switch = qsho(shortkey, mainwindow)
         switch.activated.connect(switchtab)
+        shortkey = qkey("Ctrl+Shift+Tab")
+        switch = qsho(shortkey, mainwindow)
+        switch.activated.connect(lambda: switchtab(1))
         log("switch shortcut created")
 
         ## creating close shortcut

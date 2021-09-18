@@ -121,7 +121,7 @@ QLabel#settingsframelabel {
 }
 
 
-QPlainTextEdit#notebox {
+QPlainTextEdit#notebox, QLabel#statslabel {
     background-color: transparent;
     border-style: solid;
     border-color: rgb(255, 100, 125);

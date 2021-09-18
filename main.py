@@ -997,7 +997,6 @@ class settingsoption(qbut):
         self.setGeometry(-20, y, 275, 40)
         self.setObjectName("duskybutton")
         self.setStyleSheet('''border-radius: 20; padding-left: 25; padding-right: 5;''')
-        self.setCheckable(True)
         self.setCursor(handcursor)
         log(f"{self} configured")
 
@@ -1097,6 +1096,8 @@ class statstage(tabstage):
     def __init__(self, stage: qwig):
         '''creates statstage'''
         super().__init__(stage)
+        self.titlelabel = statslabel(self, 0)
+        self.valuelabel = statslabel(self, 1, [0, 0, 0, 0, '', 0, 0, 0])
         self.configurestats()
         log(f"{self} created")
 
@@ -1105,6 +1106,26 @@ class statstage(tabstage):
         # label
         self.label.setText("Stats")
         # log
+        log(f"{self} configured")
+
+class statslabel(qlab):
+
+    def __init__(self, stage: statstage, position: int, values: list = ["Medicines bought", "Medicines stocked", "Medicines sold", "Medicines expired", '', "Total expenditure", "Total earning", "Total loss"]):
+        '''creates statslabel'''
+        super().__init__(stage)
+        self.position = position
+        self.values   = values
+        self.configure()
+        log(f"{self} created")
+
+    def configure(self):
+        '''configures statslabel'''
+        x = 120 + self.position * 460
+        self.setGeometry(x, 190, 400, 400)
+        self.setObjectName("statslabel")
+        self.setStyleSheet("border-style: none; font-weight: 700;")
+        for i in self.values:
+            self.setText(self.text() + f"{i}\n")
         log(f"{self} configured")
 
 # chart

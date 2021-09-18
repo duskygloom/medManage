@@ -49,7 +49,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QFrame {
-	background-color: rgb(75, 181, 228);
+	background-color: white;
 }</string>
    </property>
    <property name="frameShape">
@@ -74,44 +74,62 @@
      <string>-- tabname --</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
+   <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>10</x>
       <y>190</y>
-      <width>400</width>
+      <width>1080</width>
       <height>400</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Medicines bought
-Medicines stocked
-Medicines sold
-Medicines expired
-
-Total expenditure
-Total earning
-Total loss</string>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+border-style: solid;
+border-color: rgb(255, 100, 125);
+border-width: 5;
+border-radius: 20;
+font-size: 20pt;
+color: rgb(233, 233, 233);
+padding: 10 10 10 10;</string>
+    </property>
+    <property name="plainText">
+     <string>plain text edit for notes
+this will be saved and cleared as functionalities</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>190</y>
-      <width>400</width>
-      <height>400</height>
+      <x>1030</x>
+      <y>150</y>
+      <width>50</width>
+      <height>50</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 100, 125);
+border-radius: 25;</string>
+    </property>
     <property name="text">
-     <string>40
-20
-20
-0
-
-1000
-500
-0</string>
+     <string>C</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>150</y>
+      <width>50</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 100, 125);
+border-radius: 25;</string>
+    </property>
+    <property name="text">
+     <string>S</string>
     </property>
    </widget>
   </widget>

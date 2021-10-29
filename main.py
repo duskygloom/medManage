@@ -83,8 +83,8 @@ def notify(message: str):
 
 def iconconvert(iconname: str):
     '''converts blackicons to whiteicons'''
-    black = f"resources/blackicons/{iconname}.svg"
-    white = f"resources/whiteicons/{iconname}.svg"
+    black = os.path.join("resources", "blackicons", f"{iconname}.svg")
+    white = os.path.join("resources", "whiteicons", f"{iconname}.svg")
     with open(black, "r") as rfile:
         content = rfile.read()
     with open(white, "w") as wfile:
@@ -93,13 +93,14 @@ def iconconvert(iconname: str):
 def iconize(iconname: str) -> str:
     '''changes colour of icon'''
     if theme == "dark":
-        filename = f"resources/blackicons/{iconname}.svg"
+        filename = os.path.join("resources", "blackicons", f"{iconname}.svg")
     elif theme == "light":
+        dirname = os.path.join("resources", "whiteicons")
         if "whiteicons" not in os.listdir("resources"):
-            os.mkdir("resources/whiteicons")
-        if f"{iconname}.svg" not in os.listdir("resources/whiteicons"):
+            os.mkdir(dirname)
+        if f"{iconname}.svg" not in os.listdir(dirname):
             iconconvert(iconname)
-        filename = f"resources/whiteicons/{iconname}.svg"
+        filename = os.path.join("resources", "whiteicons", f"{iconname}.svg")
     return filename
 
 def switchtab(style: int = 0):
@@ -166,7 +167,7 @@ class interface(qwig):
         window = mainwindow
         window.setObjectName("mainwindow")
         window.setWindowTitle("medManage")
-        window.setWindowIcon(qico("resources/icon.svg"))
+        window.setWindowIcon(qico(os.path.join("resources", "icon.svg")))
         window.setFixedSize(1200, 800)
         log("mainwindow configured")
 
@@ -1327,7 +1328,7 @@ if __name__ == "__main__":
         mainwindow = qwin()
 
         ## font
-        qfdb.addApplicationFont("resources/Josefin Sans/JosefinSans-VariableFont_wght.ttf")
+        qfdb.addApplicationFont(os.path.join("resources", "Josefin Sans", "JosefinSans-VariableFont_wght.ttf"))
         app.setFont(qfon("Josefin Sans", 20, 450, False))
         log("font setup complete")
 

@@ -446,7 +446,6 @@ class addnewidget(qwig):
         self.batch = addfield("Batch Number", 0, self)
         self.name = addfield("Medicine Name", 1, self)
         self.quantity = addfield("Quantity", 2, self)
-        self.price = addfield("Price per Item", 3, self)
         self.addbutton = addnewbutton("Add", 0, self)
         self.clearbutton = addnewbutton("Clear", 1, self)
         self.closebutton = addnewbutton("Close", 6, self)        
@@ -477,6 +476,7 @@ class purchasewidget(addnewidget):
     def __init__(self, stage: qwig):
         '''creates purchasewidget'''
         super().__init__(stage)
+        self.cp = addfield("Cost Price per Item", 3, self)
         self.dealer = addfield("Manufacturer", 4, self)
         self.buydate = addfield("Purchase Date: YYYY-MM-DD", 5, self)
         self.mfgdate = addfield("Manufacture Date: YYYY-MM(-DD)", 6, self)
@@ -502,7 +502,7 @@ class purchasewidget(addnewidget):
 
     def clearfunction(self):
         '''function of clear button'''
-        allfields = [ self.batch, self.name, self.quantity, self.price, self.dealer, self.buydate, self.mfgdate, self.expdate ]
+        allfields = [ self.batch, self.name, self.quantity, self.cp, self.dealer, self.buydate, self.mfgdate, self.expdate ]
         for i in allfields:
             i.linedit.setText("")
         log("all fields cleared")
@@ -512,17 +512,17 @@ class purchasewidget(addnewidget):
         batch = ui.purchasewidget.batch.linedit.text()
         name = ui.purchasewidget.name.linedit.text()
         quantity = ui.purchasewidget.quantity.linedit.text()
-        price = ui.purchasewidget.price.linedit.text()
+        cp = ui.purchasewidget.cp.linedit.text()
         dealer = ui.purchasewidget.dealer.linedit.text()
         buydate = ui.purchasewidget.buydate.linedit.text()
         mfgdate = ui.purchasewidget.mfgdate.linedit.text()
         expdate = ui.purchasewidget.expdate.linedit.text()
-        info = [ batch, name, quantity, price, dealer, buydate, mfgdate, expdate ]
+        info = [ batch, name, quantity, cp, dealer, buydate, mfgdate, expdate ]
         addpurchase(info)
 
     def keyPressEvent(self, event: qkev):
         '''sets up keyboard functions'''
-        lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.price.linedit, self.dealer.linedit, self.buydate.linedit, self.mfgdate.linedit, self.expdate.linedit ]
+        lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.cp.linedit, self.dealer.linedit, self.buydate.linedit, self.mfgdate.linedit, self.expdate.linedit ]
         if event.key() == qt.Key_Up:
             focusedline = self.focusWidget()
             tofocus = lines[lines.index(focusedline) - 1]
@@ -546,6 +546,11 @@ class sellwidget(addnewidget):
     def __init__(self, stage: qwig):
         '''creates sellwidget'''
         super().__init__(stage)
+        self.batch.deleteLater()
+        self.quantity.deleteLater()
+        self.name.deleteLater()
+        self.batch = addfield("Batch number", 2, self)
+        self.sp = addfield("Sell Price per Item", 3, self)
         self.customer = addfield("Customer", 4, self)
         self.selldate = addfield("Sell Date (YYYY-MM-DD)", 5, self)
         self.configuresellwidget()
@@ -569,25 +574,23 @@ class sellwidget(addnewidget):
 
     def clearfunction(self):
         '''function of clear button'''
-        allfields = [ self.batch, self.name, self.quantity, self.price, self.customer, self.selldate ]
+        allfields = [ self.batch, self.sp, self.customer, self.selldate ]
         for i in allfields:
             i.linedit.setText("")
         log("all fields cleared")
 
     def addfunction(self):
         '''function of add button'''
-        batch = ui.sellwidget.batch.linedit.text()
-        name = ui.sellwidget.name.linedit.text()
-        quantity = ui.sellwidget.quantity.linedit.text()
-        price = ui.sellwidget.price.linedit.text()
-        customer = ui.sellwidget.customer.linedit.text()
-        selldate = ui.sellwidget.selldate.linedit.text()
-        info = [ batch, name, quantity, price, customer, selldate ]
+        batch = self.batch.linedit.text()
+        sp = self.sp.linedit.text()
+        customer = self.customer.linedit.text()
+        selldate = self.selldate.linedit.text()
+        info = [ batch, sp, customer, selldate ]
         addsell(info)
 
     def keyPressEvent(self, event):
         '''sets up keyboard functions'''
-        lines = [ self.batch.linedit, self.name.linedit, self.quantity.linedit, self.customer.linedit, self.selldate.linedit ]
+        lines = [ self.batch.linedit, self.sp.linedit, self.customer.linedit, self.selldate.linedit ]
         if event.key() == qt.Key_Up:
             focusedline = self.focusWidget()
             tofocus = lines[lines.index(focusedline) - 1]
@@ -933,12 +936,12 @@ class settingstage(tabstage):
         global theme
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
-        lines[16] = f"qsheet = '{themename}sheet.qss'\n"
+        lines[6] = f"qsheet = '{themename}sheet.qss'\n"
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet(f"{themename}sheet.qss")
         theme = themename
-        notify(f"switched to {themename} theme")
+        notify(f"switched to {themename} theme... restart to update icons")
         log(f"switched to {themename} theme")
 
     def showlogging(self):
@@ -957,7 +960,7 @@ class settingstage(tabstage):
         global logging
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
-        lines[11] = f"concise = {status}\n"
+        lines[5] = f"concise = {status}\n"
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         logging = status
@@ -1023,7 +1026,7 @@ class notestage(tabstage):
         self.textbox.setGeometry(10, 190, 1080, 400)
         self.textbox.setObjectName("notebox")
         if "note.txt" in os.listdir("resources"):
-            with open("resources/note.txt", "r") as rfile:
+            with open(os.path.join("resources", "note.txt"), "r") as rfile:
                 content = rfile.read()
                 if content == "":
                     self.textbox.setPlaceholderText("Type note...")
@@ -1046,7 +1049,7 @@ class notestage(tabstage):
 
     def savefunction(self):
         '''function for save button'''
-        with open("resources/note.txt", "w") as wfile:
+        with open(os.path.join("resources", "note.txt"), "w") as wfile:
             wfile.write(self.textbox.toPlainText())
         self.textbox.setFocus()
         self.textbox.moveCursor(qcur.End)
@@ -1063,7 +1066,7 @@ class notestage(tabstage):
     def loadfunction(self):
         '''function of clear button'''
         if "note.txt" in os.listdir("resources"):
-            with open("resources/note.txt", "r") as rfile:
+            with open(os.path.join("resources", "note.txt"), "r") as rfile:
                 self.textbox.setPlainText(rfile.read())
         else:
             notify("no saved note")
@@ -1098,7 +1101,7 @@ class statstage(tabstage):
         '''creates statstage'''
         super().__init__(stage)
         self.titlelabel = statslabel(self, 0)
-        self.valuelabel = statslabel(self, 1, [0, 0, 0, 0, '', 0, 0, 0])
+        self.valuelabel = statslabel(self, 1, getstats())
         self.configurestats()
         log(f"{self} created")
 
@@ -1111,7 +1114,7 @@ class statstage(tabstage):
 
 class statslabel(qlab):
 
-    def __init__(self, stage: statstage, position: int, values: list = ["Medicines bought", "Medicines stocked", "Medicines sold", "Medicines expired", '', "Total expenditure", "Total earning", "Total loss"]):
+    def __init__(self, stage: statstage, position: int, values: list = ["Medicines bought", "Medicines stocked", "Medicines sold", "Medicines expired", '', "Total expenditure", "Total earning", "Total profit", "Total loss"]):
         '''creates statslabel'''
         super().__init__(stage)
         self.position = position
@@ -1194,7 +1197,7 @@ def isexpired(expdate: str = None, batch: str = None):
 
 def addpurchase(info: list):
     '''adds records to stock
-       info = [ batch, name, quantity, price, dealer, buydate, mfgdate, expdate ]'''
+       info = [ batch, name, quantity, cp, dealer, buydate, mfgdate, expdate ]'''
 
     ## check if filled
     for i in info:
@@ -1231,7 +1234,9 @@ def addpurchase(info: list):
 
 def addsell(info: list):
     '''adds record to sell
-       info = [ batch, name, quantity, price, customer, selldate ]'''
+       info = [ batch, sp, customer, selldate ]
+       and to sold
+       info = [ batch, name, quantity, cp, sp, dealer, customer, buydate, selldate, mfg, exp ]'''
 
     ## check if filled
     for i in info:
@@ -1240,8 +1245,7 @@ def addsell(info: list):
             return
 
     ## converting info
-    info[2] = int(info[2])
-    info[3] = float(info[3])
+    info[1] = eval(info[1])
 
     # checking batch
     if checkin(info[0], "stock"):
@@ -1253,7 +1257,7 @@ def addsell(info: list):
             command = f'''select * from stock where batch = "{info[0]}"'''
             cursor.execute(command)
             output = cursor.fetchone()
-            command = f'''insert into sold values ("{info[0]}", "{info[1]}", {info[2]}, {info[3]}, "{output[4]}", "{info[4]}", "{output[5].isoformat()}", "{info[5].isoformat()}", "{output[6].isoformat()}", "{output[7].isoformat()}")'''
+            command = f'''insert into sold values ("{info[0]}", "{output[1]}", {output[2]}, {output[3]}, {info[1]}, "{output[4]}", "{info[2]}", "{output[5].isoformat()}", "{info[3]}", "{output[6].isoformat()}", "{output[7].isoformat()}")'''
             cursor.execute(command)
             client.commit()
             command = f'''delete from stock where batch = "{info[0]}"'''
@@ -1261,7 +1265,7 @@ def addsell(info: list):
             client.commit()
 
             # adding to sell
-            command = f'''insert into sell values ("{info[0]}", "{info[1]}", {info[2]}, {info[3]}, "{info[4]}", "{info[5]}")'''
+            command = f'''insert into sell values ("{info[0]}", "{output[1]}", {output[2]}, {info[1]}, "{info[2]}", "{info[3]}")'''
             cursor.execute(command)
             client.commit()
             notify(f"'{info[0]}' sold")
@@ -1311,6 +1315,45 @@ def searchdb(batch: str = None, name: str = None, dealer: str = None, customer: 
         values = searchintables(i, column, value)
         infodict[i] = values
     return infodict
+
+def checklen(tablename: str) -> int:
+    '''returns the length of tablename'''
+    command = f"select batch from {tablename}"
+    cursor.execute(command)
+    length = len(cursor.fetchall())
+    return length
+
+def getcost(tablename: str, sp=False) -> float:
+    '''returns total cost of tablename'''
+    if sp:
+        command = f"select quantity, sp from sold"
+    else:
+        command = f"select quantity, cp from {tablename}"
+    cursor.execute(command)
+    output = cursor.fetchall()
+    cost = 0
+    for i in output:
+        cost += i[0] * i[1]
+    return cost
+
+def getstats() -> list:
+    '''returns list of stats
+       [bought, stocked, sold, expired, '', expenditure, earning, profit, loss]'''
+    stocked = checklen("stock")
+    sold = checklen("sold")
+    bought = sold + stocked
+    expired = checklen("dumped")
+    soldcp = getcost("sold")
+    soldsp = getcost("sold", sp=True)
+    expenditure = getcost("stock") + soldcp
+    earning = soldsp
+    profit = 0
+    loss = 0
+    if soldsp > soldcp:
+        profit = soldsp - soldcp
+    else:
+        loss = getcost("dumped") + soldcp - soldsp
+    return [bought, stocked, sold, expired, '', expenditure, earning, profit, loss]
 
 ### main execution
 

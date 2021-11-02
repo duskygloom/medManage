@@ -1,17 +1,8 @@
-### database info
-
-
-host = "localhost"
-username = "duskygloom"
-password = "password"
-database = "medmanage"
-
-
-### logging info
+host = 'localhost'
+username = 'duskygloom'
+password = 'password'
+database = 'medmanage601701'
 
 concise = True
-
-
-### theme
-
+qsheet = 'darksheet.qss'
 qsheet = 'darksheet.qss'

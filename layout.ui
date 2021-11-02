@@ -74,46 +74,6 @@
      <string>-- tabname --</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>190</y>
-      <width>400</width>
-      <height>400</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Medicines bought
-Medicines stocked
-Medicines sold
-Medicines expired
-
-Total expenditure
-Total earning
-Total loss</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_3">
-    <property name="geometry">
-     <rect>
-      <x>580</x>
-      <y>190</y>
-      <width>400</width>
-      <height>400</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>40
-20
-20
-0
-
-1000
-500
-0</string>
-    </property>
-   </widget>
   </widget>
   <widget class="QFrame" name="frame_11">
    <property name="geometry">

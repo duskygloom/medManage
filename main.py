@@ -936,7 +936,7 @@ class settingstage(tabstage):
         global theme
         with open("configuration.py", "r") as rfile:
             lines = rfile.readlines()
-        lines[6] = f"qsheet = '{themename}sheet.qss'\n"
+        lines[7] = f"qsheet = '{themename}sheet.qss'\n"
         with open("configuration.py", "w") as wfile:
             wfile.writelines(lines)
         applyqsheet(f"{themename}sheet.qss")
@@ -1100,8 +1100,15 @@ class statstage(tabstage):
     def __init__(self, stage: qwig):
         '''creates statstage'''
         super().__init__(stage)
-        self.titlelabel = statslabel(self, 0)
-        self.valuelabel = statslabel(self, 1, getstats())
+        info = getstats()
+        self.bought = statsbox(self, "Medicines Bought", info[0], 0)
+        self.stocked = statsbox(self, "Medicines Stocked", info[1], 1)
+        self.sold = statsbox(self, "Medicines Sold", info[2], 2)
+        self.expired = statsbox(self, "Medicines Expired", info[3], 3)
+        self.expenditure = statsbox(self, "Total Expenditure", info[4], 4)
+        self.earning = statsbox(self, "Total Earning", info[5], 5)
+        self.profit = statsbox(self, "Total Profit", info[6], 6)
+        self.loss = statsbox(self, "Total Loss", info[7], 7)
         self.configurestats()
         log(f"{self} created")
 
@@ -1112,25 +1119,39 @@ class statstage(tabstage):
         # log
         log(f"{self} configured")
 
-class statslabel(qlab):
+class statsbox(qwig):
 
-    def __init__(self, stage: statstage, position: int, values: list = ["Medicines bought", "Medicines stocked", "Medicines sold", "Medicines expired", '', "Total expenditure", "Total earning", "Total profit", "Total loss"]):
-        '''creates statslabel'''
+    def __init__(self, stage: tabstage, title: str, value, position: int):
+        '''creates statsbox'''
         super().__init__(stage)
+        self.title = title
+        self.value = str(value)
         self.position = position
-        self.values   = values
+        self.titlelabel = qlab(self)
+        self.valuelabel = qlab(self)
         self.configure()
         log(f"{self} created")
 
     def configure(self):
-        '''configures statslabel'''
-        x = 120 + self.position * 460
-        self.setGeometry(x, 190, 400, 400)
-        self.setObjectName("statslabel")
-        self.setStyleSheet("border-style: none; font-weight: 700;")
-        for i in self.values:
-            self.setText(self.text() + f"{i}\n")
+        '''configures statabox'''
+        if self.position < 4:
+            y = 180 + self.position * 50
+        else:
+            y = 400 + (self.position - 4) * 50
+        self.setGeometry(100, y, 900, 40)
+        self.setObjectName("transparentwidget")
+        # title
+        label = self.titlelabel
+        label.setGeometry(10, 0, 430, 40)
+        label.setText(self.title)
+        label.setObjectName("statslabel")
+        # value
+        label = self.valuelabel
+        label.setGeometry(460, 0, 430, 40)
+        label.setText(self.value)
+        label.setObjectName("statslabel")
         log(f"{self} configured")
+
 
 # chart
 
@@ -1338,7 +1359,7 @@ def getcost(tablename: str, sp=False) -> float:
 
 def getstats() -> list:
     '''returns list of stats
-       [bought, stocked, sold, expired, '', expenditure, earning, profit, loss]'''
+       [bought, stocked, sold, expired, expenditure, earning, profit, loss]'''
     stocked = checklen("stock")
     sold = checklen("sold")
     bought = sold + stocked
@@ -1353,7 +1374,7 @@ def getstats() -> list:
         profit = soldsp - soldcp
     else:
         loss = getcost("dumped") + soldcp - soldsp
-    return [bought, stocked, sold, expired, '', expenditure, earning, profit, loss]
+    return [bought, stocked, sold, expired, expenditure, earning, profit, loss]
 
 ### main execution
 

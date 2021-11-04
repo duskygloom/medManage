@@ -74,428 +74,374 @@
      <string>-- tabname --</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame_2">
+   <widget class="QScrollArea" name="scrollArea">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>180</y>
-      <width>900</width>
-      <height>40</height>
+      <x>0</x>
+      <y>200</y>
+      <width>1100</width>
+      <height>400</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
+    <property name="widgetResizable">
+     <bool>true</bool>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_2">
+    <widget class="QWidget" name="scrollAreaWidgetContents">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>0</y>
-       <width>430</width>
-       <height>40</height>
+       <width>1098</width>
+       <height>398</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_3">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>230</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_5">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_4">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>280</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_6">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_7">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_5">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>330</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_9">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_6">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>400</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_10">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_12">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_7">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>450</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_13">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_14">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_8">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>500</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_15">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_16">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
-    </widget>
-   </widget>
-   <widget class="QFrame" name="frame_9">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>550</y>
-      <width>900</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 78, 78);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QLabel" name="label_17">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>title</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_18">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>0</y>
-       <width>430</width>
-       <height>40</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(198, 136, 136);
-padding-left: 10;</string>
-     </property>
-     <property name="text">
-      <string>value</string>
-     </property>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>1065</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>965</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>80</y>
+        <width>1080</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>150</y>
+        <width>1080</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>1080</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>290</y>
+        <width>1080</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>360</y>
+        <width>1080</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(0, 255, 127);
+border-radius: 30;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>980</x>
+         <y>0</y>
+         <width>100</width>
+         <height>60</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 255, 255);
+border-radius: 30;</string>
+       </property>
+       <property name="text">
+        <string>ex/cp</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>10</y>
+         <width>920</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(255, 170, 0);</string>
+       </property>
+       <property name="text">
+        <string>batchnumber from tablename</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>25</y>
+        <width>600</width>
+        <height>350</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(33, 33, 33, 200);
+color: rgb(233, 233, 233);
+border-radius: 25;
+padding: 10 10 10 10;</string>
+      </property>
+      <property name="text">
+       <string>batch: 
+name: 
+quantity: 
+cp: 
+sp: 
+dealer: 
+customer: 
+date of purchase: 
+date of sell: 
+manufacure date: 
+expiry date: </string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

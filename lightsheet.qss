@@ -26,7 +26,7 @@ QPushButton#topbutton {
 }
 
 
-QFrame#topframe {
+QFrame#topframe, QWidget#resultwidget {
     border-radius: 30;
     background-color: transparent;
     border-style: solid;
@@ -62,7 +62,7 @@ QLabel#tabstagelabel {
 }
 
 
-QWidget#transparentwidget {
+QWidget#transparentwidget, QScrollArea#transparentscroll {
     background-color: transparent;
     border-style: none;
 }
@@ -160,4 +160,18 @@ QLabel#statslabel {
     font-size: 20pt;
     padding-left: 10;
     border-radius: 10;
+}
+
+
+QLabel#infolabel {
+    background-color: rgba(33, 33, 33, 200);
+    color: rgb(233, 233, 233);
+    border-radius: 20;
+    padding: 10 10 10 10;
+}
+
+
+QLabel#noresultlabel {
+    color: rgba(33, 33, 33, 200);
+    background-color: transparent;
 }

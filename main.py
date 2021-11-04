@@ -7,6 +7,7 @@ from PyQt5.QtWidgets import QPlainTextEdit as qtxt
 from PyQt5.QtWidgets import QApplication as qapp
 from PyQt5.QtWidgets import QMainWindow as qwin
 from PyQt5.QtWidgets import QPushButton as qbut
+from PyQt5.QtWidgets import QScrollArea as qscr
 from PyQt5.QtWidgets import QShortcut as qsho
 from PyQt5.QtWidgets import QLineEdit as qlin
 from PyQt5.QtWidgets import QWidget as qwig
@@ -26,6 +27,7 @@ import configuration as conf
 
 handcursor = qt.PointingHandCursor
 centeralign = qt.AlignCenter
+middlealign = qt.AlignVCenter
 if "dark" in conf.qsheet:
     theme = "dark"
 else:
@@ -198,6 +200,7 @@ class interface(qwig):
         '''sets up Stats tab'''
         refreshcheckedbuttons("Stats", ui.alltopbuttons)
         refreshwindow(self.statstage)
+        self.statstage.updatestage()
         log("Stats tab set up")
 
     def setupchart(self):
@@ -476,6 +479,7 @@ class purchasewidget(addnewidget):
     def __init__(self, stage: qwig):
         '''creates purchasewidget'''
         super().__init__(stage)
+        self.batch.setFocus()
         self.cp = addfield("Cost Price per Item", 3, self)
         self.dealer = addfield("Manufacturer", 4, self)
         self.buydate = addfield("Purchase Date: YYYY-MM-DD", 5, self)
@@ -550,6 +554,7 @@ class sellwidget(addnewidget):
         self.quantity.deleteLater()
         self.name.deleteLater()
         self.batch = addfield("Batch number", 2, self)
+        self.batch.setFocus()
         self.sp = addfield("Sell Price per Item", 3, self)
         self.customer = addfield("Customer", 4, self)
         self.selldate = addfield("Sell Date (YYYY-MM-DD)", 5, self)
@@ -620,16 +625,11 @@ class searchstage(newstage):
         self.namebutton = searchoptbutton("Med Name", (0, 1), self)
         self.dealerbutton = searchoptbutton("Manufacturer", (1, 0), self)
         self.customerbutton = searchoptbutton("Customer", (1, 1), self)
-        self.configuresearchstage()
-        log(f"{self} created")
-
-    def configuresearchstage(self):
-        '''configures searchstage'''
         # label
         self.label.setText("Search")
         # buttons
-        self.purchasebutton.setParent(None)
-        self.sellbutton.setParent(None)
+        self.purchasebutton.deleteLater()
+        self.sellbutton.deleteLater()
         self.batchbutton.clicked.connect(self.batchfunction)
         self.namebutton.clicked.connect(self.namefunction)
         self.dealerbutton.clicked.connect(self.dealerfunction)
@@ -674,53 +674,19 @@ class searchwidget(qwig):
         self.inputline = searchinput(self)
         self.searchbutton = searchbutton("Search", 0, self)
         self.backbutton = searchbutton("Back", 1, self)
-        self.previcon = qico(iconize("prev"))
-        self.nexticon = qico(iconize("next"))
-        self.prevbutton = qbut(self)
-        self.nextbutton = qbut(self)
-        self.searchresult0 = searchresultframe(self, "batchnumber", "tablename", 0)
-        self.searchresult1 = searchresultframe(self, "batchnumber", "tablename", 1)
-        self.searchresult2 = searchresultframe(self, "batchnumber", "tablename", 2)
-        self.searchresult3 = searchresultframe(self, "batchnumber", "tablename", 3)
-        self.searchresult4 = searchresultframe(self, "batchnumber", "tablename", 4)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures searchwidget'''
+        self.resultbox = searchresultbox(self)
         # self
         self.setGeometry(25, 100, 1150, 650)
         self.setObjectName("transparentwidget")
         # label
         self.label.setGeometry(225, 15, 700, 55)
-        # prevbutton
-        self.prevbutton.setObjectName("duskybutton")
-        self.prevbutton.setStyleSheet("border-radius: 25")
-        self.prevbutton.setGeometry(230, 190, 50, 50)
-        self.prevbutton.setIcon(self.previcon)
-        self.prevbutton.setCursor(handcursor)
-        self.prevbutton.setIconSize(qsiz(30, 30))
-        # nextbutton
-        self.nextbutton.setObjectName("duskybutton")
-        self.nextbutton.setStyleSheet("border-radius: 25")
-        self.nextbutton.setGeometry(870, 190, 50, 50)
-        self.nextbutton.setIcon(self.nexticon)
-        self.nextbutton.setIconSize(qsiz(30, 30))
-        self.nextbutton.setCursor(handcursor)
         # buttons
-        self.searchbutton.clicked.connect(self.searchfunction)
         self.backbutton.clicked.connect(self.backfunction)
-        # log
-        log(f"{self} configured")
-
-    def searchfunction(self):
-        '''function for searchbutton'''
-
-        log("searchbutton pressed")
+        log(f"{self} created")
 
     def backfunction(self):
         '''function for backbutton'''
-        ui.searchwidget.setVisible(True)
+        ui.searchstage.setVisible(True)
         self.setVisible(False)
         log("backbutton pressed")
 
@@ -730,42 +696,27 @@ class searchwidget(qwig):
         if event.key() == qt.Key_Escape:
             self.backbutton.animateClick()
 
+
 class searchlabel(qlab):
 
     def __init__(self, parent: searchwidget):
         '''creates searchlabel'''
         super().__init__(parent)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures searchlabel'''
         self.setGeometry(400, 35, 350, 45)
         self.setObjectName("searchlabel")
         self.setAlignment(centeralign)
-        log(f"{self} configured")
+        log(f"{self} created")
+
 
 class searchinput(qlin):
 
     def __init__(self, parent: searchwidget):
         '''creates searchinput'''
         super().__init__(parent)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures searchinput'''
         self.setGeometry(400, 100, 350, 40)
         self.setObjectName("addfieldline")
-        log(f"{self} configured")
-
-class searchbatch(searchwidget):
-
-    def __init__(self, stage: qwig):
-        '''creates searchbatch'''
-        super().__init__(stage)
-        self.label.setText("Batch Number")
         log(f"{self} created")
+
 
 class searchbutton(qbut):
 
@@ -774,18 +725,28 @@ class searchbutton(qbut):
         super().__init__(parent)
         self.text = text
         self.position = position
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures searchbutton'''
         self.setObjectName("duskybutton")
         self.setStyleSheet("border-radius: 20")
         x = 410 + 180 * self.position
         self.setGeometry(x, 150, 150, 40)
         self.setText(self.text)
         self.setCursor(handcursor)
-        log(f"{self} configured")
+        log(f"{self} created")
+
+
+class searchbatch(searchwidget):
+
+    def __init__(self, stage: qwig):
+        '''creates searchbatch'''
+        super().__init__(stage)
+        self.label.setText("Batch Number")
+        self.searchbutton.clicked.connect(self.searchfunction)
+        log(f"{self} created")
+
+    def searchfunction(self):
+        '''searches batch'''
+        self.resultbox.showresults(searchdb("batch", self.inputline.text()))
+
 
 class searchname(searchwidget):
 
@@ -793,7 +754,13 @@ class searchname(searchwidget):
         '''creates searchname'''
         super().__init__(stage)
         self.label.setText("Medicine Name")
+        self.searchbutton.clicked.connect(self.searchfunction)
         log(f"{self} created")
+
+    def searchfunction(self):
+        '''searches name'''
+        self.resultbox.showresults(searchdb("medname", self.inputline.text()))
+
 
 class searchdealer(searchwidget):
 
@@ -801,7 +768,13 @@ class searchdealer(searchwidget):
         '''creates searchdealer'''
         super().__init__(stage)
         self.label.setText("Manufacturer")
+        self.searchbutton.clicked.connect(self.searchfunction)
         log(f"{self} created")
+
+    def searchfunction(self):
+        '''searches dealer'''
+        self.resultbox.showresults(searchdb("Manufacturer", self.inputline.text()))
+
 
 class searchcustomer(searchwidget):
 
@@ -809,63 +782,96 @@ class searchcustomer(searchwidget):
         '''creates searchcustomer'''
         super().__init__(stage)
         self.label.setText("Customer")
+        self.searchbutton.clicked.connect(self.searchfunction)
         log(f"{self} created")
 
-class searchresultframe(qfra):
+    def searchfunction(self):
+        '''searches customer'''
+        self.resultbox.showresults(searchdb("customer", self.inputline.text()))
 
-    def __init__(self, stage: searchwidget, batch: str, table: str, position: int):
-        '''creates searchresultframe'''
+
+class searchresultbox(qscr):
+
+    def __init__(self, stage: searchwidget):
+        '''creates searchresultbox'''
         super().__init__(stage)
-        self.batch = batch
-        self.table = table
-        self.position = position
+        # not found label
+        self.nflabel = qlab(self)
+        self.nflabel.setGeometry(400, 65, 325, 30)
+        self.nflabel.setObjectName("noresultlabel")
+        self.nflabel.setText("No Result Found")
+        self.nflabel.setAlignment(centeralign)
+        self.nflabel.setVisible(False)
+        # infolabel
+        self.infolabel = qlab(self)
+        self.infolabel.setGeometry(250, 25, 600, 350)
+        self.infolabel.setObjectName("infolabel")
+        self.infolabel.setVisible(False)
+        self.setObjectName("transparentscroll")
+        self.setGeometry(0, 200, 1100, 400)
+        log(f"{self} created")
+
+    def showresults(self, matches: list):
+        '''shows results'''
+        ## matches[i] = {"table": <tablename>, "Batch Number": <batch>, "Name": <medname> "Quantity": <quantity>, "Cost Price per Item": <cp>, "Sell Price per Item": <sp>, "Manufacturer": <dealer>, "Customer": <customer>, "Date of Purchase": <buydate>, "Date of Sell": <selldate>, "Manufacture Date": <mfgdate>, "Expiry Date": <expdate>} if data not available -> empty string
+        noresult = True
+        print(matches)
+        for i in self.children():
+            i.setVisible(False)
+        for i in range(len(matches)):
+            info = {}
+            for j in matches[i]:
+                if j != "table":
+                    if matches[i][j] != "":
+                        info[j] = matches[i][j]
+            searchresultwidget(self, info, i, matches[i]["Batch Number"], matches[i]["table"]).show()
+            self.nflabel.setVisible(False)
+            log("search results shown")
+            noresult = False
+        if noresult:
+            self.nflabel.setVisible(True)
+
+
+class searchresultwidget(qwig):
+
+    def __init__(self, box: searchresultbox, info: dict, position: int, batchnumber:str, tablename: str):
+        '''creates searchresultwidget'''
+        super().__init__(box)
+        y = 10 + position * 70
+        self.setGeometry(10, y, 1065, 40)
+        self.setObjectName("resultwidget")
+        # label
         self.label = qlab(self)
-        self.button = searchresultbutton(self)
-        self.configure()
+        self.label.setText(f"{batchnumber} from {tablename}")
+        self.label.setObjectName("transparentlabel")
+        self.label.setGeometry(30, 10, 920, 40)
+        # button
+        self.button = qbut(self)
+        self.button.setObjectName("duskybutton")
+        self.button.setStyleSheet("border-radius: 20")
+        self.button.setGeometry(965, 0, 100, 40)
+        self.button.setIconSize(qsiz(30, 30))
+        self.button.setIcon(qico(iconize("expand")))
+        self.button.clicked.connect(self.buttonclick)
+        # info label
+        infolabel = ui.searchbatch.resultbox.infolabel
+        text = ""
+        for i in info:
+            text += f"{i}: {info[i]}\n"
+        infolabel.setText(text)
         log(f"{self} created")
 
-    def configure(self):
-        '''configures searchresultframe'''
-        y = 260 + self.position * 80
-        self.setGeometry(10, y, 1130, 60)
-        self.setObjectName("searchresultframe")
-        self.label.setGeometry(30, 10, 980, 40)
-        self.label.setText(f"'{self.batch}' from '{self.table}'")
-        self.label.setObjectName("searchresultlabel")
-        log(f"{self} configured")
+    def buttonclick(self):
+        '''function for button click'''
+        label = ui.searchbatch.resultbox.infolabel
+        if label.isVisible():
+            label.setVisible(False)
+            self.button.setIcon(qico(iconize("expand")))
+        else:
+            label.setVisible(True)
+            self.button.setIcon(qico(iconize("collapse")))
+        log(f"{self} clicked")
 
-class searchresultbutton(qbut):
-
-    def __init__(self, parent: searchresultframe):
-        '''creates searchresultbutton'''
-        super().__init__(parent)
-        self.expand = qico(iconize("expand"))
-        self.collapse = qico(iconize("collapse"))
-        self.collapsed = True
-        self.setIconSize(qsiz(40, 40))
-        self.setIcon(self.expand)
-        self.configure()
-        log(f"{self} created")
-        
-    def configure(self):
-        '''configures searchresultbutton'''
-        self.setGeometry(1030, 0, 100, 60)
-        self.setObjectName("duskybutton")
-        self.setStyleSheet("border-radius: 30")
-        self.setCursor(handcursor)
-        self.clicked.connect(self.selfclick)
-        log(f"{self} created")
-
-    def selfclick(self):
-        '''function when button is clicked'''
-        if self.collapsed:
-            self.setIcon(self.collapse)
-            self.collapsed = False
-            log("medicine details expanded")
-            return
-        self.collapsed = True
-        self.setIcon(self.expand)
-        log("medicine details collapsed")
 
 # settings
 
@@ -1119,6 +1125,13 @@ class statstage(tabstage):
         # log
         log(f"{self} configured")
 
+    def updatestage(self):
+        '''updates statstage'''
+        info = getstats()
+        labellist = [self.bought, self.stocked, self.sold, self.expired, self.expenditure, self.earning, self.profit, self.loss]
+        for i in range(8):
+            labellist[i].valuelabel.setText(str(info[i]))
+
 class statsbox(qwig):
 
     def __init__(self, stage: tabstage, title: str, value, position: int):
@@ -1254,9 +1267,7 @@ def addpurchase(info: list):
                 notify(f"'{info[0]}' added to stock")
 
 def addsell(info: list):
-    '''adds record to sell
-       info = [ batch, sp, customer, selldate ]
-       and to sold
+    '''adds record to sold
        info = [ batch, name, quantity, cp, sp, dealer, customer, buydate, selldate, mfg, exp ]'''
 
     ## check if filled
@@ -1284,16 +1295,11 @@ def addsell(info: list):
             command = f'''delete from stock where batch = "{info[0]}"'''
             cursor.execute(command)
             client.commit()
-
-            # adding to sell
-            command = f'''insert into sell values ("{info[0]}", "{output[1]}", {output[2]}, {info[1]}, "{info[2]}", "{info[3]}")'''
-            cursor.execute(command)
-            client.commit()
             notify(f"'{info[0]}' sold")
 
     else:
         log("could not sell expired medicine")
-        notify(f"'{info[0]}' not in stock")
+        notify(f"'{info[0]}' has expired")
 
 def dumpexpired():
     '''moves expired medicines to dumped'''
@@ -1309,33 +1315,89 @@ def dumpexpired():
     # log
     log("expired medicines have been dumped")
 
-def searchintables(table: str, column: str, value: str) -> list:
-    '''returns records with matching values'''
-    command = f'''select * from {table} where {column} = "{value}"'''
+## matches[i] = {"table": <tablename>, "Batch Number": <batch>, "Name": <medname> "Quantity": <quantity>, "Cost Price per Item": <cp>, "Sell Price per Item": <sp>, "Manufacturer": <dealer>, "Customer": <customer>, "Date of Purchase": <buydate>, "Date of Sell": <selldate>, "Manufacture Date": <mfgdate>, "Expiry Date": <expdate>} if data not available -> empty string
+
+def searchstock(column: str, value: str) -> list:
+    '''returns list of matching results'''
+    command = f"select * from stock where {column} = '{value}'"
     cursor.execute(command)
     output = cursor.fetchall()
-    return output
+    matches = []
+    for i in output:
+        match = {
+            "table": "stock",
+            "Batch Number": i[0],
+            "Name": i[1],
+            "Quantity": i[2],
+            "Cost Price per Item": i[3],
+            "Sell Price per Item": "",
+            "Manufacturer": i[4],
+            "Customer": "",
+            "Date of Purchase": i[5].isoformat(),
+            "Date of Sell": "",
+            "Manufacture Date": i[6].isoformat(),
+            "Expiry Date": i[7].isoformat()
+        }
+        matches.append(match)
+    return matches
 
-def searchdb(batch: str = None, name: str = None, dealer: str = None, customer: str = None) -> dict:
-    '''returns infodict with matching parameters'''
-    if customer is not None:
-        infodict = dict()
-        values = searchintables("sold", "customer", customer)
-        infodict["sold"] = values
-        return infodict
-    if batch is None:
-        if name is None:
-            column, value = "dealer", dealer
-        else:
-            column, value = "medname", name
-    else:
-        column, value = "batch", batch
-    tables = ["stock", "sold", "dumped"]
-    infodict = dict()
-    for i in tables:
-        values = searchintables(i, column, value)
-        infodict[i] = values
-    return infodict
+def searchsold(column: str, value: str) -> list:
+    '''returns list of matching results'''
+    command = f"select * from sold where {column} = '{value}'"
+    cursor.execute(command)
+    output = cursor.fetchall()
+    matches = []
+    for i in output:
+        match = {
+            "table": "sold",
+            "Batch Number": i[0],
+            "Name": i[1],
+            "Quantity": i[2],
+            "Cost Price per Item": i[3],
+            "Sell Price per Item": i[4],
+            "Manufacturer": i[5],
+            "Customer": i[6],
+            "Date of Purchase": i[7].isoformat(),
+            "Date of Sell": i[8].isoformat(),
+            "Manufacture Date": i[9].isoformat(),
+            "Expiry Date": i[10].isoformat()
+        }
+        matches.append(match)
+    return matches
+
+def searchdumped(column: str, value: str) -> list:
+    '''returns list of matching results'''
+    command = f"select * from dumped where {column} = '{value}'"
+    cursor.execute(command)
+    output = cursor.fetchall()
+    matches = []
+    for i in output:
+        match = {
+            "table": "dumped",
+            "Batch Number": i[0],
+            "Name": i[1],
+            "Quantity": i[2],
+            "Cost Price per Item": i[3],
+            "Sell Price per Item": "",
+            "Manufacturer": i[4],
+            "Customer": "",
+            "Date of Purchase": i[5].isoformat(),
+            "Date of Sell": "",
+            "Manufacture Date": i[6].isoformat(),
+            "Expiry Date": i[7].isoformat()
+        }
+        matches.append(match)
+    return matches
+
+def searchdb(column: str, value: str) -> list:
+    '''returns list of matching value in column'''
+    fromsold   = searchsold(column, value)
+    fromdumped = searchdumped(column, value)
+    fromstock  = searchstock(column, value)
+    fromall    = fromstock + fromdumped + fromsold
+    if column == "customer":
+        return fromsold
+    return fromall
 
 def checklen(tablename: str) -> int:
     '''returns the length of tablename'''

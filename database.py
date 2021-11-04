@@ -25,13 +25,9 @@ def dbcreate():
     client.commit()
     with open("configuration.py") as conf:
         content = conf.readlines()
-    for i in range(len(content)):
-        if content[i].startswith("username"):
-            content[i] = f"username = '{username}'\n"
-        if content[i].startswith("password"):
-            content[i] = f"password = '{password}'\n"
-        if content[i].startswith("database"):
-            content[i] = f"database = '{dbname}'\n"
+    content[1] = f"username = '{username}'\n"
+    content[2] = f"password = '{password}'\n"
+    content[3] = f"database = '{dbname}'\n"
     with open("configuration.py", "w") as conf:
         conf.writelines(content)
     cursor.execute(f"use {dbname}")
@@ -54,16 +50,9 @@ def createdumped():
     cursor.execute(command)
     client.commit()
 
-def createsell():
-    ''' table sell'''
-    command = "create table sell (batch varchar(50) primary key, medname varchar(100), quantity int(12), sp decimal(8, 2), customer varchar(100), selldate date)"
-    cursor.execute(command)
-    client.commit()
-
 
 if __name__ == "__main__":
     dbcreate()
     createstock()
     createsold()
     createdumped()
-    createsell()

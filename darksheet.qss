@@ -5,7 +5,6 @@ QMainWindow#mainwindow {
 }
 
 QPushButton:hover#topbutton {
-    font-weight: 700;
     color: rgb(255, 100, 125);
 }
 QPushButton:pressed#topbutton {
@@ -47,8 +46,9 @@ QPushButton:checked#duskybutton {
 QPushButton#duskybutton {
 	background-color: rgb(255, 100, 125);
 	color: rgb(33, 33, 33);
-	border-radius: 25;
+	border-radius: 35;
 	border-style: none;
+    font-size: 20pt;
 	padding-top: 0;
 	padding-left: 0;
 	padding-right: 0;
@@ -62,7 +62,7 @@ QLabel#tabstagelabel {
 }
 
 
-QWidget#transparentwidget, QScrollArea#transparentscroll {
+QWidget#transparentwidget, QScrollArea#transparentscrollarea {
     background-color: transparent;
     border-style: none;
 }
@@ -173,13 +173,4 @@ QLabel#infolabel {
 QLabel#noresultlabel {
     color: rgba(233, 233, 233, 200);
     background-color: transparent;
-}
-
-
-QWidget#resultwidget {
-    border-radius: 20;
-    background-color: transparent;
-    border-style: solid;
-    border-width: 3;
-    border-color: rgb(255, 100, 125);
 }

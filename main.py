@@ -148,21 +148,18 @@ class interface(qwig):
         self.sellwidget = sellwidget(self)
         self.notificationwidget = notificationwidget(self)
         self.searchstage = searchstage(self)
-        self.searchbatch = searchbatch(self)
-        self.searchname = searchname(self)
-        self.searchdealer = searchdealer(self)
-        self.searchcustomer = searchcustomer(self)
+        self.searchwidget = searchwidget(self)
         self.settingstage = settingstage(self)
         self.notestage = notestage(self)
         self.chartstage = chartstage(self)
         self.statstage = statstage(self)
-        self.allwidgets = [ self.newstage, self.purchasewidget, self.sellwidget, self.searchstage, self.searchbatch, self.searchname, self.searchdealer, self.searchcustomer, self.settingstage, self.notestage, self.chartstage, self.statstage ]
+        self.allwidgets = [ self.newstage, self.purchasewidget, self.sellwidget, self.searchstage, self.searchwidget, self.settingstage, self.notestage, self.chartstage, self.statstage ]
 
     def configure(self):
         '''configures main widget'''
         self.setGeometry(0, 0, 1200, 800)
         self.setObjectName("stagewidget")
-        log("configured topframe")
+        log("created topframe")
 
     def configurewindow(self):
         '''configures mainwindow'''
@@ -171,7 +168,7 @@ class interface(qwig):
         window.setWindowTitle("medManage")
         window.setWindowIcon(qico(os.path.join("resources", "icon.svg")))
         window.setFixedSize(1200, 800)
-        log("mainwindow configured")
+        log("mainwindow created")
 
     def configuretopbuttons(self):
         '''configures topbuttons'''
@@ -182,7 +179,7 @@ class interface(qwig):
         frame.chart.clicked.connect(self.setupchart)
         frame.note.clicked.connect(self.setupnote)
         frame.settings.clicked.connect(self.setupsettings)
-        log("topbuttons configured")
+        log("topbuttons created")
 
     def setupnew(self):
         '''sets up New tab'''
@@ -230,18 +227,13 @@ class topbutton(qbut):
         super().__init__(parent)
         self.text = text
         self.position = position
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures topbutton'''
         self.setObjectName("topbutton")
         self.setText(self.text)
         self.setCursor(handcursor)
         x = 33 + 160 * self.position
         self.setGeometry(x, 10, 140, 40)
         self.setCheckable(True)
-        log(f"{self} configured")
+        log(f"{self} created")
 
 class topframe(qfra):
 
@@ -254,14 +246,9 @@ class topframe(qfra):
         self.chart = topbutton("Chart", 3, self)
         self.note = topbutton("Note", 5, self)
         self.settings = topbutton("Settings", 6, self)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures topframe'''
         self.setObjectName("topframe")
         self.setGeometry(17, 10, 1170, 60)
-        log("topframe configured")
+        log(f"{self} created")
 
 class tabstage(qwig):
 
@@ -269,11 +256,6 @@ class tabstage(qwig):
         '''creates tabstage'''
         super().__init__(stage)
         self.label = qlab(self)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures tabstage'''
         # self
         self.setGeometry(50, 120, 1100, 600)
         self.setObjectName("transparentwidget")
@@ -282,7 +264,7 @@ class tabstage(qwig):
         self.label.setObjectName("tabstagelabel")
         self.label.setAlignment(centeralign)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
 # new
 
@@ -293,19 +275,13 @@ class newbutton(qbut):
         super().__init__(parent)
         self.position = position
         self.text = text
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures newbutton'''
         x = 250 + 400 * self.position[0]
         y = 250 + 110 * self.position[1]
         self.setObjectName("duskybutton")
         self.setText(self.text)
         self.setCursor(handcursor)
         self.setGeometry(x, y, 200, 75)
-        self.setStyleSheet("border-radius: 37; font-size: 25pt;")
-        log(f"{self} configured")
+        log(f"{self} created")
 
 class newstage(tabstage):
 
@@ -314,11 +290,6 @@ class newstage(tabstage):
         super().__init__(stage)
         self.purchasebutton = newbutton("Purchase", (0, 1), self)
         self.sellbutton = newbutton("Sell", (1, 1), self)
-        self.configurenew()
-        log(f"{self} created")
-
-    def configurenew(self):
-        '''configures newstage'''
         # label
         self.label.setText("medManage")
         # buttons
@@ -327,7 +298,7 @@ class newstage(tabstage):
         button = self.sellbutton
         button.clicked.connect(self.sellbuttonfunction)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def purchasebuttonfunction(self):
         '''function of purchase button'''
@@ -350,11 +321,6 @@ class addfield(qwig):
         self.position = position
         self.linedit = qlin(self)
         self.label = qlab(self)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''''configures addfield'''
         # self
         self.setObjectName("transparentwidget")
         y = 90 + 50 * self.position
@@ -369,7 +335,7 @@ class addfield(qwig):
         label.setGeometry(420, 5, 620, 40)
         label.setText(self.name)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
 class addnewbutton(qbut):
 
@@ -378,31 +344,20 @@ class addnewbutton(qbut):
         super().__init__(parent)
         self.name = name
         self.position = position
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures addnewbutton'''
         x = 30 + 150 * self.position
         self.setGeometry(x, 520, 130, 50)
         self.setObjectName("duskybutton")
         self.setCursor(handcursor)
         self.setStyleSheet("border-radius: 25")
         self.setText(self.name)
-        log(f"{self} configured")
+        log(f"{self} created")
 
 class searchoptbutton(newbutton):
 
     def __init__(self, text: str, position: tuple, parent: qwig):
         '''creates searchoptbutton'''
         super().__init__(text, position, parent)
-        self.configuresearchoptbutton()
         log(f"{self} created")
-
-    def configuresearchoptbutton(self):
-        '''configures searchoptbutton'''
-        self.setStyleSheet("border-radius: 35; font-size: 20pt;")
-        log(f"{self} configured")
 
 class notificationwidget(qwig):
 
@@ -411,11 +366,6 @@ class notificationwidget(qwig):
         super().__init__(stage)
         self.label = qlab(self)
         self.button = qbut(self)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures notificationlabel'''
         # self
         self.setObjectName("transparentwidget")
         self.setGeometry(0, 755, 1200, 40)
@@ -433,7 +383,7 @@ class notificationwidget(qwig):
         button.setCursor(handcursor)
         button.clicked.connect(self.clearnotification)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def clearnotification(self):
         '''clears notificationlabel'''
@@ -451,12 +401,7 @@ class addnewidget(qwig):
         self.quantity = addfield("Quantity", 2, self)
         self.addbutton = addnewbutton("Add", 0, self)
         self.clearbutton = addnewbutton("Clear", 1, self)
-        self.closebutton = addnewbutton("Close", 6, self)        
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures addnewidget'''
+        self.closebutton = addnewbutton("Close", 6, self)
         # self
         self.setObjectName("transparentwidget")
         self.setGeometry(50, 130, 1100, 590)
@@ -466,7 +411,7 @@ class addnewidget(qwig):
         label.setObjectName("addnewidgetlabel")
         label.setAlignment(centeralign)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def closefunction(self):
         '''function of close button'''
@@ -479,17 +424,11 @@ class purchasewidget(addnewidget):
     def __init__(self, stage: qwig):
         '''creates purchasewidget'''
         super().__init__(stage)
-        self.batch.setFocus()
         self.cp = addfield("Cost Price per Item", 3, self)
         self.dealer = addfield("Manufacturer", 4, self)
         self.buydate = addfield("Purchase Date: YYYY-MM-DD", 5, self)
         self.mfgdate = addfield("Manufacture Date: YYYY-MM(-DD)", 6, self)
         self.expdate = addfield("Expiry Date: YYYY-MM(-DD)", 7, self)
-        self.conifgurepurchasewidget()
-        log(f"{self} created")
-
-    def conifgurepurchasewidget(self):
-        '''configures purchasewidget'''
         self.batch.setFocus()
         # label
         label = self.label
@@ -502,7 +441,7 @@ class purchasewidget(addnewidget):
         button = self.addbutton
         button.clicked.connect(self.addfunction)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def clearfunction(self):
         '''function of clear button'''
@@ -554,15 +493,9 @@ class sellwidget(addnewidget):
         self.quantity.deleteLater()
         self.name.deleteLater()
         self.batch = addfield("Batch number", 2, self)
-        self.batch.setFocus()
         self.sp = addfield("Sell Price per Item", 3, self)
         self.customer = addfield("Customer", 4, self)
         self.selldate = addfield("Sell Date (YYYY-MM-DD)", 5, self)
-        self.configuresellwidget()
-        log(f"{self} created")
-
-    def configuresellwidget(self):
-        '''configures sellwidget'''
         self.batch.setFocus()
         # label
         label = self.label
@@ -575,7 +508,7 @@ class sellwidget(addnewidget):
         button = self.addbutton
         button.clicked.connect(self.addfunction)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def clearfunction(self):
         '''function of clear button'''
@@ -635,35 +568,35 @@ class searchstage(newstage):
         self.dealerbutton.clicked.connect(self.dealerfunction)
         self.customerbutton.clicked.connect(self.customerfunction)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def batchfunction(self):
         '''function of batchbutton'''
-        stage = ui.searchbatch
-        stage.setVisible(True)
+        ui.searchwidget.updatewidget("batch")
+        ui.searchwidget.setVisible(True)
         self.setVisible(False)
-        log("searchbatch set visible")
+        log("searchwidget set visible")
 
     def namefunction(self):
         '''function of namebutton'''
-        stage = ui.searchname
-        stage.setVisible(True)
+        ui.searchwidget.updatewidget("medname")
+        ui.searchwidget.setVisible(True)
         self.setVisible(False)
-        log("searchname set visible")
+        log("searchwidget set visible")
 
     def dealerfunction(self):
         '''function of dealerbutton'''
-        stage = ui.searchdealer
-        stage.setVisible(True)
+        ui.searchwidget.updatewidget("dealer")
+        ui.searchwidget.setVisible(True)
         self.setVisible(False)
-        log("searchdealer set visible")
+        log("searchwidget set visible")
 
     def customerfunction(self):
         '''function of customerbutton'''
-        stage = ui.searchcustomer
-        stage.setVisible(True)
+        ui.searchwidget.updatewidget("customer")
+        ui.searchwidget.setVisible(True)
         self.setVisible(False)
-        log("searchcustomer set visible")
+        log("searchwidget set visible")
 
 class searchwidget(qwig):
 
@@ -681,8 +614,30 @@ class searchwidget(qwig):
         # label
         self.label.setGeometry(225, 15, 700, 55)
         # buttons
+        self.searchbutton.clicked.connect(self.searchfunction)
         self.backbutton.clicked.connect(self.backfunction)
         log(f"{self} created")
+
+    def updatewidget(self, type: str):
+        '''updates searchwidget'''
+        self.type = type
+        self.inputline.setText("")
+        for i in ui.searchwidget.resultbox.children():
+            i.setVisible(False)
+        if type == "batch":
+            self.label.setText("Batch Number")
+        elif type == "medname":
+            self.label.setText("Med Name")
+        elif type == "dealer":
+            self.label.setText("Manufacturer")
+        elif type == "customer":
+            self.label.setText("Customer")
+        log(f"{self} updated")
+
+    def searchfunction(self):
+        '''searches medicine'''
+        info = searchdb(self.type, self.inputline.text())
+        self.resultbox.showresults(info)
 
     def backfunction(self):
         '''function for backbutton'''
@@ -734,62 +689,6 @@ class searchbutton(qbut):
         log(f"{self} created")
 
 
-class searchbatch(searchwidget):
-
-    def __init__(self, stage: qwig):
-        '''creates searchbatch'''
-        super().__init__(stage)
-        self.label.setText("Batch Number")
-        self.searchbutton.clicked.connect(self.searchfunction)
-        log(f"{self} created")
-
-    def searchfunction(self):
-        '''searches batch'''
-        self.resultbox.showresults(searchdb("batch", self.inputline.text()))
-
-
-class searchname(searchwidget):
-
-    def __init__(self, stage: qwig):
-        '''creates searchname'''
-        super().__init__(stage)
-        self.label.setText("Medicine Name")
-        self.searchbutton.clicked.connect(self.searchfunction)
-        log(f"{self} created")
-
-    def searchfunction(self):
-        '''searches name'''
-        self.resultbox.showresults(searchdb("medname", self.inputline.text()))
-
-
-class searchdealer(searchwidget):
-
-    def __init__(self, stage: qwig):
-        '''creates searchdealer'''
-        super().__init__(stage)
-        self.label.setText("Manufacturer")
-        self.searchbutton.clicked.connect(self.searchfunction)
-        log(f"{self} created")
-
-    def searchfunction(self):
-        '''searches dealer'''
-        self.resultbox.showresults(searchdb("Manufacturer", self.inputline.text()))
-
-
-class searchcustomer(searchwidget):
-
-    def __init__(self, stage: qwig):
-        '''creates searchcustomer'''
-        super().__init__(stage)
-        self.label.setText("Customer")
-        self.searchbutton.clicked.connect(self.searchfunction)
-        log(f"{self} created")
-
-    def searchfunction(self):
-        '''searches customer'''
-        self.resultbox.showresults(searchdb("customer", self.inputline.text()))
-
-
 class searchresultbox(qscr):
 
     def __init__(self, stage: searchwidget):
@@ -797,25 +696,19 @@ class searchresultbox(qscr):
         super().__init__(stage)
         # not found label
         self.nflabel = qlab(self)
-        self.nflabel.setGeometry(400, 65, 325, 30)
+        self.nflabel.setGeometry(400, 70, 300, 30)
         self.nflabel.setObjectName("noresultlabel")
         self.nflabel.setText("No Result Found")
         self.nflabel.setAlignment(centeralign)
         self.nflabel.setVisible(False)
-        # infolabel
-        self.infolabel = qlab(self)
-        self.infolabel.setGeometry(250, 25, 600, 350)
-        self.infolabel.setObjectName("infolabel")
-        self.infolabel.setVisible(False)
-        self.setObjectName("transparentscroll")
-        self.setGeometry(0, 200, 1100, 400)
+        # self
+        self.setGeometry(25, 225, 1100, 400)
+        self.setObjectName("transparentscrollarea")
         log(f"{self} created")
 
     def showresults(self, matches: list):
         '''shows results'''
-        ## matches[i] = {"table": <tablename>, "Batch Number": <batch>, "Name": <medname> "Quantity": <quantity>, "Cost Price per Item": <cp>, "Sell Price per Item": <sp>, "Manufacturer": <dealer>, "Customer": <customer>, "Date of Purchase": <buydate>, "Date of Sell": <selldate>, "Manufacture Date": <mfgdate>, "Expiry Date": <expdate>} if data not available -> empty string
         noresult = True
-        print(matches)
         for i in self.children():
             i.setVisible(False)
         for i in range(len(matches)):
@@ -832,19 +725,20 @@ class searchresultbox(qscr):
             self.nflabel.setVisible(True)
 
 
-class searchresultwidget(qwig):
+class searchresultwidget(qfra):
 
     def __init__(self, box: searchresultbox, info: dict, position: int, batchnumber:str, tablename: str):
         '''creates searchresultwidget'''
         super().__init__(box)
-        y = 10 + position * 70
+        y = 10 + position * 50
         self.setGeometry(10, y, 1065, 40)
-        self.setObjectName("resultwidget")
+        self.setObjectName("topframe")
+        self.setStyleSheet("border-radius: 20;")
         # label
         self.label = qlab(self)
         self.label.setText(f"{batchnumber} from {tablename}")
         self.label.setObjectName("transparentlabel")
-        self.label.setGeometry(30, 10, 920, 40)
+        self.label.setGeometry(20, 5, 920, 30)
         # button
         self.button = qbut(self)
         self.button.setObjectName("duskybutton")
@@ -852,23 +746,27 @@ class searchresultwidget(qwig):
         self.button.setGeometry(965, 0, 100, 40)
         self.button.setIconSize(qsiz(30, 30))
         self.button.setIcon(qico(iconize("expand")))
+        self.button.setCursor(handcursor)
         self.button.clicked.connect(self.buttonclick)
         # info label
-        infolabel = ui.searchbatch.resultbox.infolabel
+        self.infolabel = qlab(ui.searchwidget.resultbox)
+        self.infolabel.setGeometry(250, 25, 600, 350)
+        self.infolabel.setObjectName("infolabel")
         text = ""
         for i in info:
             text += f"{i}: {info[i]}\n"
-        infolabel.setText(text)
+        self.infolabel.setText(text)
+        self.infolabel.setVisible(False)
         log(f"{self} created")
 
     def buttonclick(self):
         '''function for button click'''
-        label = ui.searchbatch.resultbox.infolabel
-        if label.isVisible():
-            label.setVisible(False)
+        if self.infolabel.isVisible():
+            self.infolabel.setVisible(False)
             self.button.setIcon(qico(iconize("expand")))
         else:
-            label.setVisible(True)
+            self.infolabel.setVisible(True)
+            self.infolabel.raise_()
             self.button.setIcon(qico(iconize("collapse")))
         log(f"{self} clicked")
 
@@ -891,11 +789,6 @@ class settingstage(tabstage):
         self.alloptions = [ self.themeoption, self.logoption ]
         self.allbuttons = [ self.dark, self.light, self.logyes, self.logno ]
         self.themeoption.animateClick()
-        self.configuresettings()
-        log(f"{self} created")
-
-    def configuresettings(self):
-        '''configures searchstage'''
         # self
         self.setGeometry(50, 120, 1100, 600)
         self.setObjectName("transparentwidget")
@@ -924,7 +817,7 @@ class settingstage(tabstage):
         self.logno.setText("No")
         self.logno.clicked.connect(lambda: self.createlog(False))
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def showthemes(self):
         '''function to change theme'''
@@ -980,17 +873,13 @@ class settingsbutton(qbut):
         super().__init__(parent)
         self.x = position[0]
         self.y = position[1]
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures settingsbutton'''
         x = 100 + self.x * 250
         y = 170 + self.y * 90
         self.setGeometry(x, y, 150, 50)
         self.setObjectName("duskybutton")
+        self.setStyleSheet("border-radius: 25")
         self.setCursor(handcursor)
-        log(f"{self} configured")
+        log(f"{self} created")
 
 class settingsoption(qbut):
 
@@ -998,17 +887,12 @@ class settingsoption(qbut):
         '''creates settingsoption'''
         super().__init__(parent)
         self.position = position
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures settingsoption'''
         y = 220 + self.position * 70
         self.setGeometry(-20, y, 275, 40)
         self.setObjectName("duskybutton")
         self.setStyleSheet('''border-radius: 20; padding-left: 25; padding-right: 5;''')
         self.setCursor(handcursor)
-        log(f"{self} configured")
+        log(f"{self} created")
 
 # note
 
@@ -1021,11 +905,6 @@ class notestage(tabstage):
         self.clear = notebutton(self, 0)
         self.save  = notebutton(self, 1)
         self.load  = notebutton(self, 2)
-        self.configurenote()
-        log(f"{self} created")
-
-    def configurenote(self):
-        '''configures notestage'''
         # label
         self.label.setText("Note")
         # plain textedit
@@ -1051,7 +930,7 @@ class notestage(tabstage):
         self.load.setIcon(qico(iconize("reload")))
         self.load.clicked.connect(self.loadfunction)
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def savefunction(self):
         '''function for save button'''
@@ -1086,18 +965,13 @@ class notebutton(qbut):
         '''creates notebutton'''
         super().__init__(stage)
         self.position = position
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures notebutton'''
         x = 1030 - self.position * 60
         self.setGeometry(x, 150, 50, 50)
         self.setObjectName("duskybutton")
         self.setStyleSheet("border-radius: 25")
         self.setIconSize(qsiz(30, 30))
         self.setCursor(handcursor)
-        log(f"{self} configured")
+        log(f"{self} created")
 
 # stats
 
@@ -1115,15 +989,10 @@ class statstage(tabstage):
         self.earning = statsbox(self, "Total Earning", info[5], 5)
         self.profit = statsbox(self, "Total Profit", info[6], 6)
         self.loss = statsbox(self, "Total Loss", info[7], 7)
-        self.configurestats()
-        log(f"{self} created")
-
-    def configurestats(self):
-        '''configures statstage'''
         # label
         self.label.setText("Stats")
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
     def updatestage(self):
         '''updates statstage'''
@@ -1142,11 +1011,6 @@ class statsbox(qwig):
         self.position = position
         self.titlelabel = qlab(self)
         self.valuelabel = qlab(self)
-        self.configure()
-        log(f"{self} created")
-
-    def configure(self):
-        '''configures statabox'''
         if self.position < 4:
             y = 180 + self.position * 50
         else:
@@ -1163,7 +1027,7 @@ class statsbox(qwig):
         label.setGeometry(460, 0, 430, 40)
         label.setText(self.value)
         label.setObjectName("statslabel")
-        log(f"{self} configured")
+        log(f"{self} created")
 
 
 # chart
@@ -1173,15 +1037,10 @@ class chartstage(tabstage):
     def __init__(self, stage: qwig):
         '''creates chartstage'''
         super().__init__(stage)
-        self.configurechart()
-        log(f"{self} created")
-
-    def configurechart(self):
-        '''configures chartstage'''
         # label
         self.label.setText("Chart")
         # log
-        log(f"{self} configured")
+        log(f"{self} created")
 
 
 ### database connection
@@ -1392,11 +1251,11 @@ def searchdumped(column: str, value: str) -> list:
 def searchdb(column: str, value: str) -> list:
     '''returns list of matching value in column'''
     fromsold   = searchsold(column, value)
+    if column == "customer":
+        return fromsold
     fromdumped = searchdumped(column, value)
     fromstock  = searchstock(column, value)
     fromall    = fromstock + fromdumped + fromsold
-    if column == "customer":
-        return fromsold
     return fromall
 
 def checklen(tablename: str) -> int:

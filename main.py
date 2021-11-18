@@ -25,32 +25,43 @@ import mysql.connector as sql
 from datetime import date
 import configuration as conf
 
+
+
+### variables
+
 handcursor = qt.PointingHandCursor
 centeralign = qt.AlignCenter
 middlealign = qt.AlignVCenter
+
 if "dark" in conf.qsheet:
     theme = "dark"
 else:
     theme = "light"
+
 logging = conf.concise
 
-### functions
+
+
+### global functions
+
 
 def log(message: str, category: str = "log"):
     '''logs message to terminal'''
     if logging:
-        ## printing on console
+        # printing on console
         text = f">>> {time.asctime()}\n{category}: {message}"
         print(text)
-        ## writing on file
+        # writing on file
         if not logfile.closed:
             logfile.write(f"{text}\n")
+
 
 def applyqsheet(sheet: str = conf.qsheet):
     '''selects qsheet for application'''
     with open(sheet, "r") as qs:
         app.setStyleSheet(qs.read())
     log(f"{sheet} applied")
+
 
 def closefunction(status: int = 0):
     '''closes application'''
@@ -59,6 +70,7 @@ def closefunction(status: int = 0):
         logfile.close()
     app.exit(status)
 
+
 def refreshcheckedbuttons(buttontext: str, allbuttons: list):
     '''clicks and unclicks topbuttons'''
     for i in allbuttons:
@@ -66,7 +78,8 @@ def refreshcheckedbuttons(buttontext: str, allbuttons: list):
             i.setChecked(True)
         else:
             i.setChecked(False)
-    log("checked buttons refreshed")
+    log("topbuttons refreshed")
+
 
 def refreshwindow(*required):
     '''shows and hides widgets'''
@@ -77,11 +90,13 @@ def refreshwindow(*required):
             i.setVisible(False)
     log("window refreshed")
 
+
 def notify(message: str):
     '''notifies user in notificationwidget'''
     label = ui.notificationwidget.label
     label.setText(message)
     log(f"notified user '{message}'")
+
 
 def iconconvert(iconname: str):
     '''converts blackicons to whiteicons'''
@@ -91,6 +106,7 @@ def iconconvert(iconname: str):
         content = rfile.read()
     with open(white, "w") as wfile:
         wfile.write(content.replace("#212121", "#e9e9e9"))
+
 
 def iconize(iconname: str) -> str:
     '''changes colour of icon'''
@@ -104,6 +120,7 @@ def iconize(iconname: str) -> str:
             iconconvert(iconname)
         filename = os.path.join("resources", "whiteicons", f"{iconname}.svg")
     return filename
+
 
 def switchtab(style: int = 0):
     '''switches tabs
@@ -124,7 +141,10 @@ def switchtab(style: int = 0):
                 break        
     tabs[index].animateClick()
 
-### classes
+
+
+### main interface class
+
 
 class interface(qwig):
 
@@ -135,14 +155,7 @@ class interface(qwig):
         self.configure()
         self.topframe = topframe(self)
         self.configuretopbuttons()
-        self.alltopbuttons = [
-            self.topframe.new,
-            self.topframe.search,
-            self.topframe.stats,
-            self.topframe.chart,
-            self.topframe.note,
-            self.topframe.settings
-        ]
+        self.alltopbuttons = [self.topframe.new, self.topframe.search, self.topframe.stats, self.topframe.chart, self.topframe.note, self.topframe.settings]
         self.newstage = newstage(self)
         self.purchasewidget = purchasewidget(self)
         self.sellwidget = sellwidget(self)
@@ -219,11 +232,15 @@ class interface(qwig):
         refreshwindow(self.settingstage)
         log("Settings tab set up")
 
-### custom widgets
+
+
+### default widgets
+
 
 class topbutton(qbut):
 
     def __init__(self, text: str, position: int, parent: qfra):
+        '''buttons in the topbar'''
         super().__init__(parent)
         self.text = text
         self.position = position
@@ -235,10 +252,11 @@ class topbutton(qbut):
         self.setCheckable(True)
         log(f"{self} created")
 
+
 class topframe(qfra):
 
     def __init__(self, stage: qfra):
-        '''creates topframe'''
+        '''topbar containing tabs'''
         super().__init__(stage)
         self.new = topbutton("New", 0, self)
         self.search = topbutton("Search", 1, self)
@@ -250,10 +268,11 @@ class topframe(qfra):
         self.setGeometry(17, 10, 1170, 60)
         log(f"{self} created")
 
+
 class tabstage(qwig):
 
     def __init__(self, stage: qwig):
-        '''creates tabstage'''
+        '''general stage for all tabs'''
         super().__init__(stage)
         self.label = qlab(self)
         # self
@@ -266,12 +285,15 @@ class tabstage(qwig):
         # log
         log(f"{self} created")
 
-# new
 
-class newbutton(qbut):
+
+# widgets in new tab
+
+
+class duskybutton(qbut):
 
     def __init__(self, text: str, position: tuple, parent: qwig):
-        '''creates newbutton'''
+        '''default type of button'''
         super().__init__(parent)
         self.position = position
         self.text = text
@@ -283,13 +305,14 @@ class newbutton(qbut):
         self.setGeometry(x, y, 200, 75)
         log(f"{self} created")
 
+
 class newstage(tabstage):
 
     def __init__(self, stage: qwig):
-        '''creates newstage'''
+        '''stage for new tab'''
         super().__init__(stage)
-        self.purchasebutton = newbutton("Purchase", (0, 1), self)
-        self.sellbutton = newbutton("Sell", (1, 1), self)
+        self.purchasebutton = duskybutton("Purchase", (0, 1), self)
+        self.sellbutton = duskybutton("Sell", (1, 1), self)
         # label
         self.label.setText("medManage")
         # buttons
@@ -312,10 +335,11 @@ class newstage(tabstage):
         self.setVisible(False)
         log("sellwidget opened")
 
+
 class addfield(qwig):
 
     def __init__(self, name: str, position: int, stage: qwig):
-        '''creates addfield'''
+        '''input box'''
         super().__init__(stage)
         self.name = name
         self.position = position
@@ -337,10 +361,10 @@ class addfield(qwig):
         # log
         log(f"{self} created")
 
-class addnewbutton(qbut):
+class addduskybutton(qbut):
 
     def __init__(self, name: str, position: int, parent: qwig):
-        '''creates addnewbutton'''
+        '''creates addduskybutton'''
         super().__init__(parent)
         self.name = name
         self.position = position
@@ -352,7 +376,7 @@ class addnewbutton(qbut):
         self.setText(self.name)
         log(f"{self} created")
 
-class searchoptbutton(newbutton):
+class searchoptbutton(duskybutton):
 
     def __init__(self, text: str, position: tuple, parent: qwig):
         '''creates searchoptbutton'''
@@ -399,9 +423,9 @@ class addnewidget(qwig):
         self.batch = addfield("Batch Number", 0, self)
         self.name = addfield("Medicine Name", 1, self)
         self.quantity = addfield("Quantity", 2, self)
-        self.addbutton = addnewbutton("Add", 0, self)
-        self.clearbutton = addnewbutton("Clear", 1, self)
-        self.closebutton = addnewbutton("Close", 6, self)
+        self.addbutton = addduskybutton("Add", 0, self)
+        self.clearbutton = addduskybutton("Clear", 1, self)
+        self.closebutton = addduskybutton("Close", 6, self)
         # self
         self.setObjectName("transparentwidget")
         self.setGeometry(50, 130, 1100, 590)
@@ -1301,7 +1325,7 @@ def getstats() -> list:
 
 if __name__ == "__main__":
 
-    # try:
+    try:
 
         ## creating new log file
         if conf.concise:
@@ -1347,5 +1371,5 @@ if __name__ == "__main__":
         ## closing application
         closefunction(app.exec_())
 
-    # except Exception as error:
-    #     log(error, "error")
+    except Exception as error:
+        log(error, "error")

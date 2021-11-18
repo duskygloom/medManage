@@ -1,2 +1,3 @@
 next objective:
+- learn matplotlib
 - starting with charts

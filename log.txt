@@ -1,296 +1,236 @@
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: appplication created
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: font setup complete
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: mainwindow created
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: created topframe
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98db550> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98db5e0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98db700> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98db820> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98db940> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topbutton object at 0x79e98dba60> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.topframe object at 0x79e98db4c0> created
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21670> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21700> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21820> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21a60> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topbutton object at 0x7239a21b80> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.topframe object at 0x7239a215e0> created
+>>> Thu Nov 18 19:30:12 2021
 log: topbuttons created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.newstage object at 0x79e98dbb80> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.duskybutton object at 0x79e98dbe50> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.duskybutton object at 0x79e98dbf70> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.newstage object at 0x79e98dbb80> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8785310> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e87854c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8785700> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e98dbd30> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e8785940> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e8785af0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.purchasewidget object at 0x79e87850d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8785c10> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8785ee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8788160> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e87883a0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e87885e0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.purchasewidget object at 0x79e87850d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8788a60> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8788c10> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8788e50> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e878a0d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e878a1f0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addduskybutton object at 0x79e878a310> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.sellwidget object at 0x79e8788820> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e878a430> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e8788a60> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e878a700> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.addfield object at 0x79e878a9d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.sellwidget object at 0x79e8788820> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notificationwidget object at 0x79e878ac10> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchstage object at 0x79e878aee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.duskybutton object at 0x79e878d0d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.duskybutton object at 0x79e878d1f0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchstage object at 0x79e878aee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d310> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d310> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d4c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d4c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d670> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d670> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d820> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchoptbutton object at 0x79e878d820> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchstage object at 0x79e878aee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchlabel object at 0x79e878dc10> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchinput object at 0x79e878dca0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchbutton object at 0x79e878ddc0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchbutton object at 0x79e878dee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchresultbox object at 0x79e8790040> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.searchwidget object at 0x79e878d9d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingstage object at 0x79e87901f0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsbutton object at 0x79e87905e0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsbutton object at 0x79e8790670> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsoption object at 0x79e8790790> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsoption object at 0x79e87908b0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsbutton object at 0x79e87909d0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingsbutton object at 0x79e8790af0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.settingstage object at 0x79e87901f0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notestage object at 0x79e8790ee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notebutton object at 0x79e87921f0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notebutton object at 0x79e8792280> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notebutton object at 0x79e87923a0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.notestage object at 0x79e8790ee0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.chartstage object at 0x79e87924c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.chartstage object at 0x79e87924c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statstage object at 0x79e8792700> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e8792940> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e8792b80> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e8792dc0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e879c040> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e879c280> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e879c4c0> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e879c700> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statsbox object at 0x79e879c940> created
->>> Thu Nov 18 13:42:10 2021
-log: <__main__.statstage object at 0x79e8792700> created
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.newstage object at 0x7239a21ca0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a21f70> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a360d0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.newstage object at 0x7239a21ca0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a36430> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a365e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a36820> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a21e50> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a36a60> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a36c10> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.purchasewidget object at 0x7239a361f0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a36d30> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3b040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3b280> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3b4c0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3b700> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.purchasewidget object at 0x7239a361f0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3bb80> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3bd30> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3bf70> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a3c1f0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a3c310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addduskybutton object at 0x7239a3c430> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.sellwidget object at 0x7239a3b940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3c550> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3bb80> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3c820> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.addfield object at 0x7239a3caf0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.sellwidget object at 0x7239a3b940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notificationwidget object at 0x7239a3cd30> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchstage object at 0x7239a3f040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a3f1f0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a3f310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchstage object at 0x7239a3f040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f430> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f430> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f5e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f5e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f790> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f790> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a3f940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchstage object at 0x7239a3f040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchlabel object at 0x7239a3fd30> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchinput object at 0x7239a3fdc0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchbutton object at 0x7239a3fee0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchbutton object at 0x7239a41040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchresultbox object at 0x7239a41160> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchwidget object at 0x7239a3faf0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingstage object at 0x7239a41310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsbutton object at 0x7239a41700> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsbutton object at 0x7239a41790> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsoption object at 0x7239a418b0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsoption object at 0x7239a419d0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsbutton object at 0x7239a41af0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingsbutton object at 0x7239a41c10> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.settingstage object at 0x7239a41310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notestage object at 0x7239a46040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notebutton object at 0x7239a46310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notebutton object at 0x7239a463a0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notebutton object at 0x7239a464c0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.notestage object at 0x7239a46040> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.chartstage object at 0x7239a465e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a46820> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.duskybutton object at 0x7239a46940> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.chartstage object at 0x7239a465e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a46a60> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a46a60> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a46c10> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.searchoptbutton object at 0x7239a46c10> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.chartstage object at 0x7239a465e0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statstage object at 0x7239a46dc0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a490d0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a49310> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a49550> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a49790> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a499d0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a49c10> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x7239a49e50> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statsbox object at 0x72380c70d0> created
+>>> Thu Nov 18 19:30:12 2021
+log: <__main__.statstage object at 0x7239a46dc0> created
+>>> Thu Nov 18 19:30:12 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: window refreshed
->>> Thu Nov 18 13:42:10 2021
+>>> Thu Nov 18 19:30:12 2021
 log: New tab setup
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: interface created
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: switch shortcut created
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: close shortcut created
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: darksheet.qss applied
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: expired medicines have been dumped
->>> Thu Nov 18 13:42:12 2021
+>>> Thu Nov 18 19:30:13 2021
 log: themes shown
->>> Thu Nov 18 13:42:15 2021
+>>> Thu Nov 18 19:30:16 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:15 2021
+>>> Thu Nov 18 19:30:16 2021
 log: window refreshed
->>> Thu Nov 18 13:42:15 2021
+>>> Thu Nov 18 19:30:16 2021
 log: Search tab set up
->>> Thu Nov 18 13:42:16 2021
+>>> Thu Nov 18 19:30:16 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:16 2021
+>>> Thu Nov 18 19:30:17 2021
 log: window refreshed
->>> Thu Nov 18 13:42:16 2021
+>>> Thu Nov 18 19:30:17 2021
 log: Stats tab set up
->>> Thu Nov 18 13:42:17 2021
+>>> Thu Nov 18 19:30:18 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:17 2021
+>>> Thu Nov 18 19:30:18 2021
 log: window refreshed
->>> Thu Nov 18 13:42:17 2021
+>>> Thu Nov 18 19:30:18 2021
 log: Chart tab set up
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:25 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:25 2021
 log: window refreshed
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:25 2021
 log: Note tab set up
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:26 2021
 log: topbuttons refreshed
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:26 2021
 log: window refreshed
->>> Thu Nov 18 13:42:18 2021
+>>> Thu Nov 18 19:30:26 2021
 log: Settings tab set up
->>> Thu Nov 18 13:42:20 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:20 2021
-log: window refreshed
->>> Thu Nov 18 13:42:20 2021
-log: New tab setup
->>> Thu Nov 18 13:42:21 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:21 2021
-log: window refreshed
->>> Thu Nov 18 13:42:21 2021
-log: Search tab set up
->>> Thu Nov 18 13:42:22 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:22 2021
-log: window refreshed
->>> Thu Nov 18 13:42:22 2021
-log: Stats tab set up
->>> Thu Nov 18 13:42:22 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:22 2021
-log: window refreshed
->>> Thu Nov 18 13:42:22 2021
-log: Chart tab set up
->>> Thu Nov 18 13:42:24 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:24 2021
-log: window refreshed
->>> Thu Nov 18 13:42:24 2021
-log: Note tab set up
->>> Thu Nov 18 13:42:24 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:24 2021
-log: window refreshed
->>> Thu Nov 18 13:42:24 2021
-log: Settings tab set up
->>> Thu Nov 18 13:42:25 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:25 2021
-log: window refreshed
->>> Thu Nov 18 13:42:25 2021
-log: New tab setup
->>> Thu Nov 18 13:42:30 2021
-log: purchasewidget opened
->>> Thu Nov 18 13:42:45 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:45 2021
-log: window refreshed
->>> Thu Nov 18 13:42:45 2021
-log: Note tab set up
->>> Thu Nov 18 13:42:53 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:53 2021
-log: window refreshed
->>> Thu Nov 18 13:42:53 2021
-log: Chart tab set up
->>> Thu Nov 18 13:42:56 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:42:56 2021
-log: window refreshed
->>> Thu Nov 18 13:42:56 2021
-log: Stats tab set up
->>> Thu Nov 18 13:43:01 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:43:01 2021
-log: window refreshed
->>> Thu Nov 18 13:43:01 2021
-log: Search tab set up
->>> Thu Nov 18 13:43:02 2021
-log: topbuttons refreshed
->>> Thu Nov 18 13:43:02 2021
-log: window refreshed
->>> Thu Nov 18 13:43:02 2021
-log: Chart tab set up
->>> Thu Nov 18 13:43:06 2021
+>>> Thu Nov 18 19:30:28 2021
 log: closing application

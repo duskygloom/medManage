@@ -577,7 +577,7 @@ class searchstage(newstage):
 
     def __init__(self, stage: qwig):
         '''creates searchstage'''
-        super().__init__(stage)
+        super().__init__(stage) #flag2
         self.batchbutton = searchoptbutton("Batch Number", (0, 0), self)
         self.namebutton = searchoptbutton("Med Name", (0, 1), self)
         self.dealerbutton = searchoptbutton("Manufacturer", (1, 0), self)
@@ -1067,6 +1067,30 @@ class chartstage(tabstage):
         log(f"{self} created")
 
 
+class chartstage(newstage):
+
+    def __init__(self, stage: qwig):
+        '''select between finance and stocks charts'''
+        super().__init__(stage)
+        # label
+        self.label.setText("Charts")
+        # buttons
+        self.purchasebutton.deleteLater()
+        self.sellbutton.deleteLater()
+        self.financebutton = searchoptbutton("Finance", (0, 1), self)
+        self.financebutton.clicked.connect(self.financefunc)
+        self.stocksbutton  = searchoptbutton("Stocks", (1, 1), self)
+        self.stocksbutton.clicked.connect(self.stocksfunc)
+        # log
+        log(f"{self} created")
+
+    def financefunc(self):
+        '''displays finance chart'''
+
+    def stocksfunc(self):
+        '''displays stocks chart'''
+
+
 ### database connection
 
 client = sql.connect(
@@ -1337,7 +1361,7 @@ if __name__ == "__main__":
         mainwindow = qwin()
 
         ## font
-        qfdb.addApplicationFont(os.path.join("resources", "Josefin Sans", "JosefinSans-VariableFont_wght.ttf"))
+        qfdb.addApplicationFont(os.path.join("resources", "Josefin Sans", "static", "JosefinSans-Regular.ttf"))
         app.setFont(qfon("Josefin Sans", 20, 450, False))
         log("font setup complete")
 

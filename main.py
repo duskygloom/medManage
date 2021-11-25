@@ -1,4 +1,6 @@
-### imports
+###############
+### imports ###
+###############
 
 import sys
 import time
@@ -26,8 +28,9 @@ from datetime import date
 import configuration as conf
 
 
-
-### variables
+#################
+### variables ###
+#################
 
 handcursor = qt.PointingHandCursor
 centeralign = qt.AlignCenter
@@ -42,16 +45,18 @@ logging = conf.concise
 
 
 
-### global functions
+########################
+### global functions ###
+########################
 
 
 def log(message: str, category: str = "log"):
-    '''logs message to terminal'''
+    '''logs message to terminal and file'''
     if logging:
-        # printing on console
+        # to terminal
         text = f">>> {time.asctime()}\n{category}: {message}"
         print(text)
-        # writing on file
+        # to file
         if not logfile.closed:
             logfile.write(f"{text}\n")
 
@@ -143,7 +148,9 @@ def switchtab(style: int = 0):
 
 
 
-### main interface class
+############################
+### main interface class ###
+############################
 
 
 class interface(qwig):
@@ -151,8 +158,15 @@ class interface(qwig):
     def __init__(self):
         '''creates interface class'''
         super().__init__(mainwindow)
-        self.configurewindow()
-        self.configure()
+        self.setGeometry(0, 0, 1200, 800)
+        self.setObjectName("stagewidget")
+        # configuring window
+        window = mainwindow
+        window.setObjectName("mainwindow")
+        window.setWindowTitle("medManage")
+        window.setWindowIcon(qico(os.path.join("resources", "icon.svg")))
+        window.setFixedSize(1200, 800)
+        # all sub widgets
         self.topframe = topframe(self)
         self.configuretopbuttons()
         self.alltopbuttons = [self.topframe.new, self.topframe.search, self.topframe.stats, self.topframe.chart, self.topframe.note, self.topframe.settings]
@@ -167,21 +181,6 @@ class interface(qwig):
         self.chartstage = chartstage(self)
         self.statstage = statstage(self)
         self.allwidgets = [ self.newstage, self.purchasewidget, self.sellwidget, self.searchstage, self.searchwidget, self.settingstage, self.notestage, self.chartstage, self.statstage ]
-
-    def configure(self):
-        '''configures main widget'''
-        self.setGeometry(0, 0, 1200, 800)
-        self.setObjectName("stagewidget")
-        log("created topframe")
-
-    def configurewindow(self):
-        '''configures mainwindow'''
-        window = mainwindow
-        window.setObjectName("mainwindow")
-        window.setWindowTitle("medManage")
-        window.setWindowIcon(qico(os.path.join("resources", "icon.svg")))
-        window.setFixedSize(1200, 800)
-        log("mainwindow created")
 
     def configuretopbuttons(self):
         '''configures topbuttons'''
@@ -234,7 +233,9 @@ class interface(qwig):
 
 
 
-### default widgets
+#######################
+### default widgets ###
+#######################
 
 
 class topbutton(qbut):
@@ -286,10 +287,6 @@ class tabstage(qwig):
         log(f"{self} created")
 
 
-
-# widgets in new tab
-
-
 class duskybutton(qbut):
 
     def __init__(self, text: str, position: tuple, parent: qwig):
@@ -304,6 +301,12 @@ class duskybutton(qbut):
         self.setCursor(handcursor)
         self.setGeometry(x, y, 200, 75)
         log(f"{self} created")
+
+
+
+##########################
+### widgets in new tab ###
+##########################
 
 
 class newstage(tabstage):
@@ -361,6 +364,7 @@ class addfield(qwig):
         # log
         log(f"{self} created")
 
+
 class addduskybutton(qbut):
 
     def __init__(self, name: str, position: int, parent: qwig):
@@ -376,12 +380,6 @@ class addduskybutton(qbut):
         self.setText(self.name)
         log(f"{self} created")
 
-class searchoptbutton(duskybutton):
-
-    def __init__(self, text: str, position: tuple, parent: qwig):
-        '''creates searchoptbutton'''
-        super().__init__(text, position, parent)
-        log(f"{self} created")
 
 class notificationwidget(qwig):
 
@@ -414,6 +412,7 @@ class notificationwidget(qwig):
         self.label.setText("")
         log("notification cleared")
 
+
 class addnewidget(qwig):
 
     def __init__(self, stage: qwig):
@@ -442,6 +441,7 @@ class addnewidget(qwig):
         ui.newstage.setVisible(True)
         self.setVisible(False)
         log("newstage closed")
+
 
 class purchasewidget(addnewidget):
 
@@ -508,6 +508,7 @@ class purchasewidget(addnewidget):
         elif event.key() == qt.Key_Escape:
             self.closebutton.animateClick()
 
+
 class sellwidget(addnewidget):
 
     def __init__(self, stage: qwig):
@@ -571,17 +572,22 @@ class sellwidget(addnewidget):
         elif event.key() == qt.Key_Escape:
             self.closebutton.animateClick()
 
-# search
+
+
+##############################
+### widgets for search tab ###
+##############################
+
 
 class searchstage(newstage):
 
     def __init__(self, stage: qwig):
         '''creates searchstage'''
-        super().__init__(stage) #flag2
-        self.batchbutton = searchoptbutton("Batch Number", (0, 0), self)
-        self.namebutton = searchoptbutton("Med Name", (0, 1), self)
-        self.dealerbutton = searchoptbutton("Manufacturer", (1, 0), self)
-        self.customerbutton = searchoptbutton("Customer", (1, 1), self)
+        super().__init__(stage)
+        self.batchbutton = duskybutton("Batch Number", (0, 0), self)
+        self.namebutton = duskybutton("Med Name", (0, 1), self)
+        self.dealerbutton = duskybutton("Manufacturer", (1, 0), self)
+        self.customerbutton = duskybutton("Customer", (1, 1), self)
         # label
         self.label.setText("Search")
         # buttons
@@ -621,6 +627,7 @@ class searchstage(newstage):
         ui.searchwidget.setVisible(True)
         self.setVisible(False)
         log("searchwidget set visible")
+
 
 class searchwidget(qwig):
 
@@ -795,7 +802,11 @@ class searchresultwidget(qfra):
         log(f"{self} clicked")
 
 
-# settings
+
+################################
+### widgets for settings tab ###
+################################
+
 
 class settingstage(tabstage):
 
@@ -890,6 +901,7 @@ class settingstage(tabstage):
         log(f"logging set to {status}")
         notify(f"logging set to {status}")
 
+
 class settingsbutton(qbut):
 
     def __init__(self, parent: qfra, position: tuple):
@@ -918,7 +930,12 @@ class settingsoption(qbut):
         self.setCursor(handcursor)
         log(f"{self} created")
 
-# note
+
+
+############################
+### widgets for note tab ###
+############################
+
 
 class notestage(tabstage):
 
@@ -983,6 +1000,7 @@ class notestage(tabstage):
         self.textbox.moveCursor(qcur.End)
         log("loaded note")
 
+
 class notebutton(qbut):
     
     def __init__(self, stage: notestage, position: int):
@@ -997,7 +1015,12 @@ class notebutton(qbut):
         self.setCursor(handcursor)
         log(f"{self} created")
 
-# stats
+
+
+#############################
+### widgets for stats tab ###
+#############################
+
 
 class statstage(tabstage):
 
@@ -1024,6 +1047,7 @@ class statstage(tabstage):
         labellist = [self.bought, self.stocked, self.sold, self.expired, self.expenditure, self.earning, self.profit, self.loss]
         for i in range(8):
             labellist[i].valuelabel.setText(str(info[i]))
+
 
 class statsbox(qwig):
 
@@ -1054,7 +1078,11 @@ class statsbox(qwig):
         log(f"{self} created")
 
 
-# chart
+
+##############################
+### widgets for charts tab ###
+##############################
+
 
 class chartstage(tabstage):
 
@@ -1067,7 +1095,7 @@ class chartstage(tabstage):
         log(f"{self} created")
 
 
-class chartstage(newstage):
+class chartstage(tabstage):
 
     def __init__(self, stage: qwig):
         '''select between finance and stocks charts'''
@@ -1075,11 +1103,9 @@ class chartstage(newstage):
         # label
         self.label.setText("Charts")
         # buttons
-        self.purchasebutton.deleteLater()
-        self.sellbutton.deleteLater()
-        self.financebutton = searchoptbutton("Finance", (0, 1), self)
+        self.financebutton = duskybutton("Finance", (0, 1), self)
         self.financebutton.clicked.connect(self.financefunc)
-        self.stocksbutton  = searchoptbutton("Stocks", (1, 1), self)
+        self.stocksbutton  = duskybutton("Stocks", (1, 1), self)
         self.stocksbutton.clicked.connect(self.stocksfunc)
         # log
         log(f"{self} created")

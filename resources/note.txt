@@ -1,3 +1,2 @@
 next objective:
-- learn matplotlib
-- starting with charts
+- placing chart in chart tab
